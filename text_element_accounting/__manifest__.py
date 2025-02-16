@@ -3,7 +3,7 @@
 
 {
     "name": "Text Elements - Accounting module",
-    "version": "18.0.1.0.0",
+    "version": "18.0.2.0.0",
     "license": "AGPL-3",
     "author": "Noviat, Elneo",
     "website": "https://www.noviat.com/",
@@ -13,7 +13,7 @@
     "data": [
         "views/account_move_views.xml",
         "views/invoice_report.xml",
-        "views/text_element_views.xml",
     ],
     "installable": True,
+    "post_init_hook": "_enable_text_element_on_aml",
 }
