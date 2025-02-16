@@ -6,7 +6,7 @@
     "version": "16.0.1.0.0",
     "license": "AGPL-3",
     "author": "Noviat, Elneo",
-    "website": "https://www.noviat.com/",
+    "website": "https://github.com/jdideren/odoo-text-elements",
     "category": "Purchases",
     "summary": "Text Elements - Purchases module",
     "depends": ["text_element_base", "purchase"],

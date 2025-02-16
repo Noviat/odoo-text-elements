@@ -72,7 +72,8 @@ class AddTextElementWizard(models.TransientModel):
                 if (
                     wizard.text_element_id.id in current_record.text_element_ids.ids
                     or current_record.text_element_custom_ids.filtered(
-                        lambda tec: tec.text_element_id.id == wizard.text_element_id.id
+                        lambda tec, wiz=wizard: tec.text_element_id.id
+                        == wiz.text_element_id.id
                     )
                 ):
                     raise UserError(
