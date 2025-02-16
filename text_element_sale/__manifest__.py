@@ -15,4 +15,5 @@
         "views/sale_order_views.xml",
     ],
     "installable": True,
+    "post_init_hook": "_enable_text_element_on_sale",
 }

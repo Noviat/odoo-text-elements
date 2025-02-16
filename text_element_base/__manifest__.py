@@ -19,7 +19,6 @@
         "views/text_element_views.xml",
         "views/text_element_custom_views.xml",
         "wizards/add_text_element_wizard.xml",
-        "wizards/edit_sale_element_wizard_view.xml",
     ],
     "installable": True,
 }

@@ -2,4 +2,3 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 text_element_base.access_text_element,access_text_element,text_element_base.model_text_element,base.group_user,1,1,1,1
 text_element_base.access_text_element_custom,access_text_element_custom,text_element_base.model_text_element_custom,base.group_user,1,1,1,1
 text_element_base.access_add_text_element_wizard,access_add_text_element_wizard,text_element_base.model_add_text_element_wizard,base.group_user,1,1,1,1
-text_element_base.access_edit_text_element_wizard,access_edit_text_element_wizard,text_element_base.model_edit_text_element_wizard,base.group_user,1,1,1,1

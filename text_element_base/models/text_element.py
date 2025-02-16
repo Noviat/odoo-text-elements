@@ -13,7 +13,6 @@ _logger = logging.getLogger(__name__)
 
 class TextElement(models.Model):
     _name = "text.element"
-    _inherit = "mail.render.mixin"
     _description = "Text elements"
     _order = "position desc, sequence, id"
     _check_company_auto = True
@@ -21,16 +20,14 @@ class TextElement(models.Model):
     name = fields.Char(required=True, translate=True)
     content = fields.Html(
         translate=True,
-        render_engine="inline_template",
-        render_options={"post_process": True},
         sanitize=False,
     )
     position = fields.Selection(
         [
-            ("before", "Before"),
-            ("before_line", "Before Lines"),
-            ("after_line", "After Lines"),
-            ("after", "After"),
+            ("before", "Before the document"),
+            ("before_line", "Before Lines (if applicable)"),
+            ("after_line", "After Lines (if applicable)"),
+            ("after", "After the document"),
         ],
         default="before",
     )
