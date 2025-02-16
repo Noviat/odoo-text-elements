@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//t[@t-set='o']" position="attributes">
+            <attribute name="t-value">o.with_context(lang=o.report_lang)</attribute>
+        </xpath>
+        <xpath expr="//t[@t-set='o']" position="after">
+            <t t-set="text_element_record" t-value="o" />
+            <t t-set="use_text_elements" t-value="True" />
+        </xpath>
+        <xpath expr="//table" position="before">
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'before_line'" />
+            </t>
+        </xpath>
+        <div id="right-elements" position="after">
+            <div class="oe_structure mt-3" />
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'after_line'" />
+            </t>
+        </div>
+    </template>
+    <template id="report_invoice" inherit_id="account.report_invoice">
+        <xpath expr="//t[@t-set='lang']" position="attributes">
+            <attribute name="t-value">o.report_lang</attribute>
+        </xpath>
+    </template>
+</odoo>

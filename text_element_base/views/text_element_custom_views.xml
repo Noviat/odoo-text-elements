@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="text_element_custom_form_view" model="ir.ui.view">
+        <field name="name">text.element.custom.form</field>
+        <field name="model">text.element.custom</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="sequence" />
+                            <field name="name" />
+                            <field name="position" />
+                            <field name="lang" />
+                        </group>
+                        <group>
+                            <field name="res_model" />
+                            <field name="res_id" />
+                            <field name="page_break_before" />
+                            <field name="page_break_after" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Content" name="content">
+                            <field
+                                name="content"
+                                nolabel="1"
+                                options="{'style-inline': true, 'codeview': true}"
+                            />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="text_element_custom_simplified_form_view" model="ir.ui.view">
+        <field name="name">text.element.custom.simplified.form</field>
+        <field name="model">text.element.custom</field>
+        <field
+            name="inherit_id"
+            ref="text_element_base.text_element_custom_form_view"
+        />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <field name="res_model" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="res_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="text_element_custom_tree_view" model="ir.ui.view">
+        <field name="name">text.element.custom.tree</field>
+        <field name="model">text.element.custom</field>
+        <field name="arch" type="xml">
+            <tree create="0">
+                <field name="res_model" column_invisible="True" />
+                <field name="res_id" column_invisible="True" />
+                <field name="sequence" />
+                <field name="name" />
+                <field name="position" />
+                <field name="lang" />
+                <field name="page_break_before" />
+                <field name="page_break_after" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="text_element_custom_action" model="ir.actions.act_window">
+        <field name="name">Custom Text Elements</field>
+        <field name="res_model">text.element.custom</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="text_element_custom_menu"
+        action="text_element_custom_action"
+        name="Custom Text Elements"
+        parent="text_element_base.text_element_menu_category"
+    />
+</odoo>
