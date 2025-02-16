@@ -1,0 +1,6 @@
+* **Elneo** (https://www.elneo.com/)
+  * Loic Grifnée (https://github.com/loicgrifnee)
+* **Noviat** (https://noviat.com/)
+  * Benjamin Henquet (https://github.com/BenjaHe)
+* **NSI SA** (https://www.nsi-sa.be/)
+* Jérémy Didderen (https://github.com/jdidderen)
