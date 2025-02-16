@@ -9,11 +9,12 @@
     "website": "https://github.com/jdideren/odoo-text-elements",
     "category": "Tools",
     "summary": "Text Elements - Base module",
-    "depends": ["base", "web"],
+    "depends": ["base", "web", "mail"],
     "data": [
         "security/ir.model.access.csv",
         "security/text_element_security.xml",
         "views/menus.xml",
+        "views/ir_model_views.xml",
         "views/report_templates.xml",
         "views/text_element_views.xml",
         "views/text_element_custom_views.xml",

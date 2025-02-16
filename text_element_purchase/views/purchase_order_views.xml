@@ -20,11 +20,6 @@
                         type="object"
                         class="btn-primary"
                     />
-                    <group>
-                        <group>
-                            <field name="report_lang" required="True" />
-                        </group>
-                    </group>
                     <separator string="Text Elements" />
                     <field
                         name="text_element_ids"

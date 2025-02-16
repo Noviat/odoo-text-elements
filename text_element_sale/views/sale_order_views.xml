@@ -9,53 +9,26 @@
             <notebook position="inside">
                 <page name="text_element_page" string="Text Elements">
                     <button
-                        string="Add Text Element"
+                        string="Add Existing Text Element"
                         name="action_add_element_wizard"
                         type="object"
                         class="btn-primary"
                     />
-                    <button
-                        string="Edit Text Element"
-                        name="action_edit_element_wizard"
-                        type="object"
-                        class="btn-primary"
-                    />
-                    <group>
-                        <group>
-                            <field name="report_lang" required="True" />
-                        </group>
-                    </group>
                     <separator string="Text Elements" />
                     <field
                         name="text_element_ids"
                         nolabel="1"
                         options="{'no_create_edit': True, 'no_create': True, 'no_edit': True}"
+                        context="{'default_res_id': id, 'default_res_model': 'sale.order', 'form_view_ref': 'text_element_base.text_element_simplified_form_view', 'tree_view_ref': 'text_element_base.text_element_simplified_tree_view'}"
                         readonly="1"
                         force_save="1"
-                    >
-                        <tree>
-                                <field name="sequence" />
-                                <field name="name" />
-                                <field name="position" />
-                                <field name="page_break_before" />
-                                <field name="page_break_after" />
-                                <field name="company_id" groups="base.group_system" />
-                                <field name="user_id" />
-                                <button
-                                name="action_remove"
-                                string=" "
-                                icon="fa-trash"
-                                type="object"
-                                context="{'active_id': parent.id, 'active_model': 'sale.order'}"
-                            />
-                            </tree>
-                    </field>
+                    />
                     <separator string="Custom Text Elements" />
                     <field
                         name="text_element_custom_ids"
                         nolabel="1"
                         options="{'no_create': True, 'no_create_edit': True, 'no_edit': True}"
-                        context="{'default_res_id': id, 'default_res_model': 'sale.order', 'form_view_ref': 'text_element_base.text_element_custom_simplified_form_view'}"
+                        context="{'default_res_id': id, 'default_res_model': 'sale.order', 'form_view_ref': 'text_element_base.text_element_custom_simplified_form_view', 'tree_view_ref': 'text_element_base.text_element_custom_simplified_tree_view'}"
                         force_save="1"
                     />
                 </page>

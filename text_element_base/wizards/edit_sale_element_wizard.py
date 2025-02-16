@@ -61,15 +61,6 @@ class EditTextElementWizard(models.TransientModel):
             else:
                 wizard.text_element_domain = [("res_model", "=", "all")]
 
-    @api.depends("res_model", "res_id", "lang")
-    def _compute_lang(self):
-        for wizard in self:
-            if wizard.res_id and wizard.res_model:
-                current_record = self.env[wizard.res_model].browse(wizard.res_id)
-                wizard.lang = current_record.report_lang
-            else:
-                wizard.lang = False
-
     @api.depends("res_model", "res_id")
     def _compute_text_element_custom_domain(self):
         for wizard in self:

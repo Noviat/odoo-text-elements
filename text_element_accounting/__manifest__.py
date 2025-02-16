@@ -13,7 +13,6 @@
     "data": [
         "views/account_move_views.xml",
         "views/invoice_report.xml",
-        "views/text_element_views.xml",
     ],
     "installable": True,
 }

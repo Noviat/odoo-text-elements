@@ -7,7 +7,6 @@
             <form string="Edit Text Element">
                 <sheet>
                     <group>
-                        <field name="lang" invisible="1" />
                         <field name="res_id" invisible="1" />
                         <field name="res_model" invisible="1" />
                         <field name="text_element_domain" invisible="1" />

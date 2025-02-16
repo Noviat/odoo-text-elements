@@ -9,11 +9,10 @@
     "website": "https://github.com/jdideren/odoo-text-elements",
     "category": "Sales",
     "summary": "Text Elements - Sale module",
-    "depends": ["text_element_base", "text_element_accounting", "sale"],
+    "depends": ["text_element_base", "sale"],
     "data": [
         "views/sale_order_report.xml",
         "views/sale_order_views.xml",
-        "views/text_element_views.xml",
     ],
     "installable": True,
 }
