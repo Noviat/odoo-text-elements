@@ -78,7 +78,8 @@ class TextElement(models.Model):
         "Placeholder Expression",
         store=False,
         readonly=False,
-        help="Final placeholder expression, to be copy-pasted in the desired template field.",
+        help="Final placeholder expression, to be "
+        "copy-pasted in the desired template field.",
         compute="_compute_dynamic_placeholder",
     )
     field_ttype = fields.Selection(
