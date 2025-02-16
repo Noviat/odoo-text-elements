@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Multi-company rules -->
+    <record id="text_element_rule_company" model="ir.rule">
+        <field name="name">Text Element - Multi-Company</field>
+        <field name="model_id" ref="model_text_element" />
+        <field
+            name="domain_force"
+        >['|', ('company_id','=',False), ('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="text_element_custom_rule_company" model="ir.rule">
+        <field name="name">Custom Text Element - Multi-Company</field>
+        <field name="model_id" ref="model_text_element_custom" />
+        <field
+            name="domain_force"
+        >['|', ('company_id','=',False), ('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>

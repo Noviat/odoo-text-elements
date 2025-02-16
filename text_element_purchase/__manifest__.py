@@ -1,0 +1,19 @@
+# Copyright 2009-2023 Noviat
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
+{
+    "name": "Text Elements - Purchase module",
+    "version": "16.0.1.0.0",
+    "license": "AGPL-3",
+    "author": "Noviat, Elneo",
+    "website": "https://www.noviat.com/",
+    "category": "Purchases",
+    "summary": "Text Elements - Purchases module",
+    "depends": ["text_element_base", "purchase"],
+    "data": [
+        "views/purchase_order_views.xml",
+        "views/purchase_order_templates.xml",
+        "views/purchase_quotation_templates.xml",
+    ],
+    "installable": True,
+}

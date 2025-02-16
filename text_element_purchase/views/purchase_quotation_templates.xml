@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template
+        id="report_purchasequotation_document"
+        inherit_id="purchase.report_purchasequotation_document"
+    >
+        <xpath expr="//t[@t-set='o']" position="attributes">
+            <attribute name="t-value">o.with_context(lang=o.report_lang)</attribute>
+        </xpath>
+        <xpath expr="//t[@t-set='o']" position="after">
+            <t t-set="text_element_record" t-value="o" />
+            <t t-set="text_elements_before" t-value="o._get_text_elements_before()" />
+            <t t-set="text_elements_after" t-value="o._get_text_elements_after()" />
+        </xpath>
+    </template>
+    <template
+        id="report_purchasequotation"
+        inherit_id="purchase.report_purchasequotation"
+    >
+        <xpath
+            expr="//t[@t-call='purchase.report_purchasequotation_document']"
+            position="attributes"
+        >
+            <attribute name="t-lang">o.report_lang</attribute>
+        </xpath>
+    </template>
+</odoo>
