@@ -1,28 +1,33 @@
 # Copyright 2009-2023 Noviat
 # License AGPL-3.0 or later (httpS://www.gnu.org/licenses/agpl).
 
+import logging
 import re
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
+from odoo.models import Command
 
-FIELD_TYPES = [(key, key) for key in sorted(fields.Field.by_type)]
+_logger = logging.getLogger(__name__)
 
 
 class TextElement(models.Model):
     _name = "text.element"
     _description = "Text elements"
-    _order = "position desc, lang, sequence, id"
+    _order = "position desc, sequence, id"
     _check_company_auto = True
 
-    name = fields.Char(required=True)
-    content = fields.Html()
+    name = fields.Char(required=True, translate=True)
+    content = fields.Html(
+        translate=True,
+        sanitize=False,
+    )
     position = fields.Selection(
         [
-            ("before", "Before"),
-            ("before_line", "Before Lines"),
-            ("after_line", "After Lines"),
-            ("after", "After"),
+            ("before", "Before the document"),
+            ("before_line", "Before Lines (if applicable)"),
+            ("after_line", "After Lines (if applicable)"),
+            ("after", "After the document"),
         ],
         default="before",
     )
@@ -39,131 +44,72 @@ class TextElement(models.Model):
         string="User",
         required=False,
     )
-    lang = fields.Selection(
-        selection=lambda self: self._selection_lang_get(),
-        string="Language",
-        default=lambda self: self.env.lang,
-        required=True,
-    )
     active = fields.Boolean(default=True)
-    res_model = fields.Selection(
-        string="Model",
-        selection=lambda self: self._selection_model(),
-        default="all",
-        required=True,
-    )
-    # expression builder
-    model_object_field = fields.Many2one(
-        "ir.model.fields",
-        string="Field",
-        store=False,
-        help="Select target field from the related document model.\n"
-        "If it is a relationship field you will be able to select "
-        "a target field at the destination of the relationship.",
-    )
-    sub_object = fields.Many2one(
+    model_id = fields.Many2one(
         "ir.model",
-        "Sub-model",
+        "Applies to",
+        ondelete="cascade",
+        domain="[('can_be_used_with_text_elements','=', True)]",
+    )
+    model = fields.Char(
+        "Related Document Model",
+        related="model_id.model",
+        index=True,
+        store=True,
         readonly=True,
-        store=False,
-        help="When a relationship field is selected as first field, "
-        "this field shows the document model the relationship goes to.",
-        compute="_compute_dynamic_placeholder",
     )
-    sub_model_object_field = fields.Many2one(
-        "ir.model.fields",
-        "Sub-field",
-        store=False,
-        readonly=False,
-        help="When a relationship field is selected as first field, "
-        "this field lets you select the target field within the "
-        "destination document model (sub-model).",
-        compute="_compute_dynamic_placeholder",
+    filter_domain = fields.Char(
+        string="Apply on", compute="_compute_filter_domain", store=True, readonly=False
     )
-    copyvalue = fields.Char(
-        "Placeholder Expression",
-        store=False,
-        readonly=False,
-        help="Final placeholder expression, "
-        "to be copy-pasted in the desired template field.",
-        compute="_compute_dynamic_placeholder",
+    field_placeholder_generator = fields.Char(store=False)
+    field_placeholder_generator_name = fields.Char(
+        compute="_compute_field_placeholder_generator_name"
     )
-    field_ttype = fields.Selection(
-        selection=FIELD_TYPES, string="Field Type", compute="_compute_field_ttype"
-    )
-    datetime_options = fields.Selection(
-        selection=[
-            ("date", "Only show the date"),
-            ("time", "Only show the time"),
-            ("full_date", "Only show the date and in full text"),
-        ],
-        store=False,
-        readonly=False,
-    )
-    date_options = fields.Selection(
-        selection=[("full", "Only show the date and in full text")],
-        store=False,
-        readonly=False,
+    context_params = fields.Char(
+        help="Params have to be separated with "
+        "semicolon and can be prefixed with"
+        "exclamation mark (e.g proforma;!proforma)"
     )
 
     @api.model
     def _selection_lang_get(self):
         return self.env["res.lang"].get_installed()
 
-    @api.model
-    def _selection_model(self):
-        return [("all", "All")]
+    @api.depends("model_id")
+    def _compute_filter_domain(self):
+        for record in self:
+            if not record.model_id:
+                record.filter_domain = False
 
     @api.depends(
-        "model_object_field",
-        "sub_model_object_field",
-        "datetime_options",
-        "date_options",
+        "field_placeholder_generator",
     )
-    def _compute_dynamic_placeholder(self):
+    def _compute_field_placeholder_generator_name(self):
         for record in self:
-            if record.model_object_field:
-                option = None
-                if record.datetime_options:
-                    option = record.datetime_options
-                elif record.date_options:
-                    option = record.date_options
-                if record.model_object_field.ttype in [
-                    "many2one",
-                    "one2many",
-                    "many2many",
-                ]:
-                    model = self.env["ir.model"]._get(
-                        record.model_object_field.relation
-                    )
-                    if model:
-                        record.sub_object = model.id
-                        sub_field_name = record.sub_model_object_field.name
-                        record.copyvalue = self._build_expression(
-                            record.model_object_field.name,
-                            sub_field_name,
-                            option=option,
-                        )
-                else:
-                    record.sub_object = False
-                    record.sub_model_object_field = False
-                    record.copyvalue = self._build_expression(
-                        record.model_object_field.name, False, option=option
-                    )
+            if record.field_placeholder_generator:
+                record.field_placeholder_generator_name = (
+                    f"[[{record.field_placeholder_generator}]]"
+                )
             else:
-                record.sub_object = False
-                record.copyvalue = False
-                record.sub_model_object_field = False
+                record.field_placeholder_generator_name = False
 
-    @api.depends("model_object_field", "sub_model_object_field")
-    def _compute_field_ttype(self):
-        for record in self:
-            if record.sub_model_object_field:
-                record.field_ttype = record.sub_model_object_field.ttype
-            elif record.model_object_field:
-                record.field_ttype = record.model_object_field.ttype
-            else:
-                record.field_ttype = False
+    def action_add_text_element_to_custom(self):
+        self.ensure_one()
+        model_id, current_record = self._get_active_record()
+        if model_id and current_record:
+            values = {
+                "name": self.name,
+                "content": self.content,
+                "position": self.position,
+                "page_break_before": self.page_break_before,
+                "page_break_after": self.page_break_after,
+                "sequence": self.sequence,
+                "model_id": model_id,
+                "res_id": self.env.context.get("active_id"),
+                "text_element_id": self.id,
+            }
+            self.env["text.element.custom"].create(values)
+            current_record.write({"text_element_ids": [Command.unlink(self.id)]})
 
     def action_remove(self):
         current_record = False
@@ -217,12 +163,11 @@ class TextElement(models.Model):
     def _get_content_interpreted(self, record):
         self.ensure_one()
         if self.content:
-            lang = record.report_lang
             orm_fields = record.fields_get()
             fields_found = re.findall(r"\[\[([^\]\]]*)\]\]*", self.content)
             content_interpreted = self.content
             for field_found in fields_found:
-                value = self._get_value_for_field(record, field_found, orm_fields, lang)
+                value = self._get_value_for_field(record, field_found, orm_fields)
                 if value:
                     content_interpreted = content_interpreted.replace(
                         "[[" + field_found + "]]", value
@@ -280,20 +225,25 @@ class TextElement(models.Model):
             )
         return value
 
-    @api.model
-    def _build_expression(self, field_name, sub_field_name, option=None):
-        """Returns a placeholder expression for use in a template field,
-        based on the values provided in the placeholder assistant.
-
-        :param field_name: main field name
-        :param sub_field_name: sub field name (M2O)
-        :return: final placeholder expression"""
-        expression = ""
-        if field_name:
-            expression = "[[" + field_name
-            if sub_field_name:
-                expression += "." + sub_field_name
-            if option:
-                expression += "::" + option
-            expression += "]]"
-        return expression
+    def _get_active_record(self):
+        if self.env.context.get("active_model", False):
+            model = self.env.context.get("active_model")
+        elif self.env.context.get("default_res_model", False):
+            model = self.env.context.get("default_res_model")
+        else:
+            model = False
+        if self.env.context.get("active_id", False):
+            active_id = self.env.context.get("active_id")
+        elif self.env.context.get("default_res_id", False):
+            active_id = self.env.context.get("default_res_id")
+        else:
+            active_id = False
+        if model:
+            model_id = self.env["ir.model"]._get_id(model)
+        else:
+            model_id = False
+        if model and active_id:
+            current_record = self.env[model].browse(active_id)
+        else:
+            current_record = False
+        return model_id, current_record
