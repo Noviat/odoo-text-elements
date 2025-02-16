@@ -1,20 +1,18 @@
 # Copyright 2009-2023 Noviat
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import _, api, fields, models
+import logging
+
+from odoo import _, fields, models
+from odoo.tools.safe_eval import safe_eval
+
+_logger = logging.getLogger(__name__)
 
 
 class TextElement(models.AbstractModel):
     _name = "text.element.abstract"
     _description = "Text elements (Abstract)"
 
-    report_lang = fields.Selection(
-        selection=lambda self: self._selection_lang_get(),
-        required=False,
-        compute="_compute_report_lang",
-        store=True,
-        readonly=False,
-    )
     text_element_ids = fields.Many2many(
         comodel_name="text.element",
         string="Text Elements",
@@ -30,15 +28,6 @@ class TextElement(models.AbstractModel):
         copy=True,
     )
 
-    @api.model
-    def _selection_lang_get(self):
-        return self.env["res.lang"].get_installed()
-
-    def _compute_report_lang(self):
-        for rec in self:
-            rec.report_lang = self.env.lang
-
-    @api.depends("report_lang")
     def _compute_text_elements(self):
         for record in self:
             elements = self.env["text.element"].search(
@@ -70,10 +59,9 @@ class TextElement(models.AbstractModel):
         self.ensure_one()
         return [
             ("default", "=", True),
-            ("lang", "=", self.report_lang),
             "|",
-            ("res_model", "=", self._name),
-            ("res_model", "=", "all"),
+            ("model", "=", self._name),
+            ("model", "=", False),
             "|",
             ("user_id", "=", False),
             ("user_id", "=", self.env.user.id),
@@ -94,4 +82,51 @@ class TextElement(models.AbstractModel):
         custom_text_elements = self.text_element_custom_ids.filtered(
             lambda r: r.position == position
         )
+        text_elements = self._get_text_element_records_filter_domain(text_elements)
+        custom_text_elements = self._get_text_element_records_filter_domain(
+            custom_text_elements
+        )
+        text_elements = self._get_text_element_records_context_params(text_elements)
+        custom_text_elements = self._get_text_element_records_context_params(
+            custom_text_elements
+        )
         return text_elements, custom_text_elements
+
+    def _get_text_element_records_filter_domain(self, text_elements):
+        if text_elements._name == "text.element":
+            new_text_elements = self.env["text.element"]
+        else:
+            new_text_elements = self.env["text.element.custom"]
+        for text_element in text_elements:
+            if text_element.filter_domain:
+                domain = safe_eval(text_element.filter_domain)
+                record = self.sudo().filtered_domain(domain)
+                if record:
+                    new_text_elements |= text_element
+            else:
+                new_text_elements |= text_element
+        return new_text_elements
+
+    def _get_text_element_records_context_params(self, text_elements):
+        if text_elements._name == "text.element":
+            new_text_elements = self.env["text.element"]
+        else:
+            new_text_elements = self.env["text.element.custom"]
+        for text_element in text_elements:
+            if text_element.context_params:
+                element_valid = True
+                for context_param in text_element.context_params.split(";"):
+                    not_context = False
+                    context = context_param
+                    if context_param.startswith("!"):
+                        not_context = True
+                        context = context_param[1:]
+                    if not_context and self.env.context.get(context, False):
+                        element_valid = False
+                    if not not_context and not self.env.context.get(context, False):
+                        element_valid = False
+                if element_valid:
+                    new_text_elements |= text_element
+            else:
+                new_text_elements |= text_element
+        return new_text_elements

@@ -14,7 +14,6 @@ class TextElementCustom(models.Model):
     _check_company_auto = True
 
     res_id = fields.Integer(required=True, string="Record ID")
-    res_model = fields.Selection(required=True)
     text_element_id = fields.Many2one(
         comodel_name="text.element", string="Text Element"
     )

@@ -10,15 +10,32 @@
                         <group>
                             <field name="name" />
                             <field name="position" />
-                            <field name="lang" />
-                            <field name="res_model" />
+                            <field name="model" invisible="1" />
+                            <field
+                                name="model_id"
+                                placeholder="e.g. Contact"
+                                options="{'no_create': True}"
+                            />
+                            <field
+                                name="filter_domain"
+                                widget="domain"
+                                groups="!base.group_no_one"
+                                options="{'model': 'model', 'in_dialog': False, 'foldable': True}"
+                                invisible="not model_id"
+                            />
+                            <field
+                                name="filter_domain"
+                                widget="domain"
+                                groups="base.group_no_one"
+                                options="{'model': 'model', 'in_dialog': True}"
+                                invisible="not model_id"
+                            />
                         </group>
                         <group>
                             <field name="page_break_before" />
                             <field name="page_break_after" />
                             <field name="default" />
-                            <field name="sequence" />
-                            <field name="user_id" widget="many2one_avatar" />
+                            <field name="context_params" />
                         </group>
                     </group>
                     <notebook>
@@ -30,41 +47,30 @@
                                 options="{'style-inline': true, 'codeview': true}"
                             />
                         </page>
+                        <page
+                            name="placeholder_generator"
+                            string="Dynamic placerholder generator"
+                            invisible="not model_id"
+                        >
+                            <group>
+                                <field
+                                    name="field_placeholder_generator"
+                                    widget="DynamicModelFieldSelectorChar"
+                                    options="{'model': 'model'}"
+                                />
+                                <field
+                                    name="field_placeholder_generator_name"
+                                    invisible="not field_placeholder_generator"
+                                />
+                            </group>
+                        </page>
                         <page name="other_informations" string="Others informations">
                             <group>
+                                <field name="user_id" widget="many2one_avatar" />
                                 <field name="sequence" />
                                 <field
                                     name="company_id"
                                     groups="base.group_multi_company"
-                                />
-                            </group>
-                        </page>
-                        <page
-                            string="Dynamic Placeholder Generator"
-                            name="dynamic_placeholder_generator"
-                            invisible="res_model == 'all'"
-                        >
-                            <group>
-                                <field
-                                    name="model_object_field"
-                                    domain="[('model','=',res_model),('ttype','!=','one2many'),('ttype','!=','many2many')]"
-                                />
-                                <field name="sub_object" readonly="1" />
-                                <field
-                                    name="sub_model_object_field"
-                                    domain="[('model_id','=',sub_object),('ttype','!=','one2many'),('ttype','!=','many2many')]"
-                                    readonly="not sub_object"
-                                    required="sub_object"
-                                />
-                                <field name="copyvalue" />
-                                <field name="field_ttype" invisible="1" />
-                                <field
-                                    name="datetime_options"
-                                    invisible="field_ttype != 'datetime'"
-                                />
-                                <field
-                                    name="date_options"
-                                    invisible="field_ttype != 'date'"
                                 />
                             </group>
                         </page>
@@ -82,11 +88,10 @@
                 <field name="sequence" widget="handle" />
                 <field name="name" />
                 <field name="position" />
-                <field name="lang" />
                 <field name="page_break_before" />
                 <field name="page_break_after" />
                 <field name="default" />
-                <field name="res_model" />
+                <field name="model_id" />
                 <field
                     name="company_id"
                     groups="base.group_multi_company"
@@ -94,6 +99,48 @@
                 />
                 <field name="user_id" widget="many2one_avatar" optional="show" />
             </list>
+        </field>
+    </record>
+
+    <record id="text_element_simplified_form_view" model="ir.ui.view">
+        <field name="name">text.element.simplified.form</field>
+        <field name="model">text.element</field>
+        <field name="inherit_id" ref="text_element_base.text_element_form_view" />
+        <field name="mode">primary</field>
+        <field name="priority">999</field>
+        <field name="arch" type="xml">
+            <field name="model_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="text_element_simplified_tree_view" model="ir.ui.view">
+        <field name="name">text.element.simplified.tree</field>
+        <field name="model">text.element</field>
+        <field name="inherit_id" ref="text_element_base.text_element_tree_view" />
+        <field name="mode">primary</field>
+        <field name="priority">999</field>
+        <field name="arch" type="xml">
+            <field name="model_id" position="attributes">
+                <attribute name="column_invisible">1</attribute>
+            </field>
+            <field name="user_id" position="after">
+                <button
+                    name="action_add_text_element_to_custom"
+                    title="Add text element to custom elements"
+                    icon="fa-plus"
+                    type="object"
+                    context="{'active_id': parent.id, 'active_model': parent._name}"
+                />
+                <button
+                    name="action_remove"
+                    title="Remove text element"
+                    icon="fa-trash"
+                    type="object"
+                    context="{'active_id': parent.id, 'active_model': parent._name}"
+                />
+            </field>
         </field>
     </record>
 
