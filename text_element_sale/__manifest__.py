@@ -6,7 +6,7 @@
     "version": "17.0.1.0.0",
     "license": "AGPL-3",
     "author": "Noviat, Elneo",
-    "website": "https://www.noviat.com/",
+    "website": "https://github.com/jdideren/odoo-text-elements",
     "category": "Sales",
     "summary": "Text Elements - Sale module",
     "depends": ["text_element_base", "text_element_accounting", "sale"],
