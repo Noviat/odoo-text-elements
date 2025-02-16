@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template
+        id="report_saleorder_document"
+        inherit_id="sale.report_saleorder_document"
+    >
+        <xpath expr="//t[@t-set='doc']" position="attributes">
+            <attribute name="t-value">doc.with_context(lang=doc.report_lang)</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('oe_structure')]" position="before">
+            <t t-set="text_element_record" t-value="doc" />
+            <t t-set="use_text_elements" t-value="True" />
+        </xpath>
+        <xpath expr="//t[@t-set='display_discount']" position="after">
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'before_line'" />
+            </t>
+        </xpath>
+        <div name="so_total_summary" position="after">
+            <div class="oe_structure mt-3" />
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'after_line'" />
+            </t>
+        </div>
+    </template>
+    <template id="report_saleorder" inherit_id="sale.report_saleorder_raw">
+        <xpath
+            expr="//t[@t-call='sale.report_saleorder_document']"
+            position="attributes"
+        >
+            <attribute name="t-lang">doc.report_lang</attribute>
+        </xpath>
+    </template>
+</odoo>

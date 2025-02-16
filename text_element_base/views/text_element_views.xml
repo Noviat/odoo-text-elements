@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="text_element_form_view" model="ir.ui.view">
+        <field name="name">text.element.form</field>
+        <field name="model">text.element</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="position" />
+                            <field name="lang" />
+                            <field name="res_model" />
+                        </group>
+                        <group>
+                            <field name="page_break_before" />
+                            <field name="page_break_after" />
+                            <field name="default" />
+                            <field name="sequence" />
+                            <field name="user_id" widget="many2one_avatar" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="content_page" string="Content">
+                            <field
+                                name="content"
+                                nolabel="1"
+                                widget="html"
+                                options="{'style-inline': true, 'codeview': true}"
+                            />
+                        </page>
+                        <page name="other_informations" string="Others informations">
+                            <group>
+                                <field name="sequence" />
+                                <field
+                                    name="company_id"
+                                    groups="base.group_multi_company"
+                                />
+                            </group>
+                        </page>
+                        <page
+                            string="Dynamic Placeholder Generator"
+                            name="dynamic_placeholder_generator"
+                            invisible="res_model == 'all'"
+                        >
+                            <group>
+                                <field
+                                    name="model_object_field"
+                                    domain="[('model','=',res_model),('ttype','!=','one2many'),('ttype','!=','many2many')]"
+                                />
+                                <field name="sub_object" readonly="1" />
+                                <field
+                                    name="sub_model_object_field"
+                                    domain="[('model_id','=',sub_object),('ttype','!=','one2many'),('ttype','!=','many2many')]"
+                                    readonly="not sub_object"
+                                    required="sub_object"
+                                />
+                                <field name="copyvalue" />
+                                <field name="field_ttype" invisible="1" />
+                                <field
+                                    name="datetime_options"
+                                    invisible="field_ttype != 'datetime'"
+                                />
+                                <field
+                                    name="date_options"
+                                    invisible="field_ttype != 'date'"
+                                />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="text_element_tree_view" model="ir.ui.view">
+        <field name="name">text.element.tree</field>
+        <field name="model">text.element</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="position" />
+                <field name="lang" />
+                <field name="page_break_before" />
+                <field name="page_break_after" />
+                <field name="default" />
+                <field name="res_model" />
+                <field
+                    name="company_id"
+                    groups="base.group_multi_company"
+                    optional="hide"
+                />
+                <field name="user_id" widget="many2one_avatar" optional="show" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="text_element_action" model="ir.actions.act_window">
+        <field name="name">Text Elements</field>
+        <field name="res_model">text.element</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="text_element_menu"
+        action="text_element_action"
+        name="Text Elements"
+        parent="text_element_base.text_element_menu_category"
+    />
+</odoo>
