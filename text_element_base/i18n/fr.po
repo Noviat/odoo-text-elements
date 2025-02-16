@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 20:40+0000\n"
-"PO-Revision-Date: 2025-02-16 20:40+0000\n"
+"POT-Creation-Date: 2025-02-16 20:41+0000\n"
+"PO-Revision-Date: 2025-02-16 20:41+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__active
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__active
 msgid "Active"
-msgstr ""
+msgstr "Actif"
 
 #. module: text_element_base
 #. odoo-python
@@ -28,7 +28,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:text_element_base.add_text_element_wizard_form_view
 #, python-format
 msgid "Add Text Element"
-msgstr ""
+msgstr "Ajouter un élément de texte"
 
 #. module: text_element_base
 #: model:ir.model,name:text_element_base.model_add_text_element_wizard
@@ -39,59 +39,59 @@ msgstr ""
 #: model:ir.model.fields,help:text_element_base.field_text_element__page_break_after
 #: model:ir.model.fields,help:text_element_base.field_text_element_custom__page_break_after
 msgid "Add a page break after element"
-msgstr ""
+msgstr "Ajouter un saut de page après l'élément"
 
 #. module: text_element_base
 #: model:ir.model.fields,help:text_element_base.field_text_element__page_break_before
 #: model:ir.model.fields,help:text_element_base.field_text_element_custom__page_break_before
 msgid "Add a page break before element"
-msgstr ""
+msgstr "Ajouter un saut de page avant l'élément"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.add_text_element_wizard_form_view
 msgid "Add and Close"
-msgstr ""
+msgstr "Ajouter et fermer"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.add_text_element_wizard_form_view
 msgid "Add and Continue"
-msgstr ""
+msgstr "Ajouter et continuer"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_simplified_tree_view
 msgid "Add text element to custom elements"
-msgstr ""
+msgstr "Ajouter un élément de texte aux éléments personnalisés"
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__edit_text_element_wizard__position__after
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__after
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__after
 msgid "After"
-msgstr ""
+msgstr "Après"
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__edit_text_element_wizard__position__after_line
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__after_line
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__after_line
 msgid "After Lines"
-msgstr ""
+msgstr "Après les lignes"
 
 #. module: text_element_base
 #: model:ir.ui.menu,name:text_element_base.text_element_menu_category
 msgid "All Elements"
-msgstr ""
+msgstr "Tous les éléments"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__model_id
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__model_id
 msgid "Applies to"
-msgstr ""
+msgstr "S'applique à"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__filter_domain
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__filter_domain
 msgid "Apply on"
-msgstr ""
+msgstr "Appliquer sur"
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__edit_text_element_wizard__position__before
@@ -262,7 +262,7 @@ msgstr ""
 #. module: text_element_base
 #: model:ir.model,name:text_element_base.model_ir_model
 msgid "Models"
-msgstr ""
+msgstr "Modèles"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__name
