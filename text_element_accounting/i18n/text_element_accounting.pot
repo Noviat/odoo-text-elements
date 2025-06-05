@@ -1,0 +1,110 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* text_element_accounting
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: text_element_accounting
+#: model_terms:ir.ui.view,arch_db:text_element_accounting.view_move_form
+msgid "Add Text Element"
+msgstr ""
+
+#. module: text_element_accounting
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element__move_type__all
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element_custom__move_type__all
+msgid "All"
+msgstr ""
+
+#. module: text_element_accounting
+#: model:ir.model.fields,field_description:text_element_accounting.field_account_bank_statement_line__text_element_custom_ids
+#: model:ir.model.fields,field_description:text_element_accounting.field_account_move__text_element_custom_ids
+#: model_terms:ir.ui.view,arch_db:text_element_accounting.view_move_form
+msgid "Custom Text Elements"
+msgstr ""
+
+#. module: text_element_accounting
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element__move_type__out_refund
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element_custom__move_type__out_refund
+msgid "Customer Credit Note"
+msgstr ""
+
+#. module: text_element_accounting
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element__move_type__out_invoice
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element_custom__move_type__out_invoice
+msgid "Customer Invoice"
+msgstr ""
+
+#. module: text_element_accounting
+#: model_terms:ir.ui.view,arch_db:text_element_accounting.view_move_form
+msgid "Edit Text Element"
+msgstr ""
+
+#. module: text_element_accounting
+#: model:ir.model,name:text_element_accounting.model_account_move
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element__move_type__entry
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element_custom__move_type__entry
+msgid "Journal Entry"
+msgstr ""
+
+#. module: text_element_accounting
+#: model:ir.model.fields,field_description:text_element_accounting.field_text_element__move_type
+#: model:ir.model.fields,field_description:text_element_accounting.field_text_element_custom__move_type
+msgid "Move Type"
+msgstr ""
+
+#. module: text_element_accounting
+#: model:ir.model.fields,field_description:text_element_accounting.field_text_element__only_shown_in_proforma
+#: model:ir.model.fields,field_description:text_element_accounting.field_text_element_custom__only_shown_in_proforma
+msgid "Only Shown In Proforma"
+msgstr ""
+
+#. module: text_element_accounting
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element__move_type__in_receipt
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element_custom__move_type__in_receipt
+msgid "Purchase Receipt"
+msgstr ""
+
+#. module: text_element_accounting
+#: model:ir.model.fields,field_description:text_element_accounting.field_account_bank_statement_line__report_lang
+#: model:ir.model.fields,field_description:text_element_accounting.field_account_move__report_lang
+msgid "Report Lang"
+msgstr ""
+
+#. module: text_element_accounting
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element__move_type__out_receipt
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element_custom__move_type__out_receipt
+msgid "Sales Receipt"
+msgstr ""
+
+#. module: text_element_accounting
+#: model:ir.model.fields,field_description:text_element_accounting.field_account_bank_statement_line__text_element_ids
+#: model:ir.model.fields,field_description:text_element_accounting.field_account_move__text_element_ids
+#: model_terms:ir.ui.view,arch_db:text_element_accounting.view_move_form
+msgid "Text Elements"
+msgstr ""
+
+#. module: text_element_accounting
+#: model:ir.model,name:text_element_accounting.model_text_element
+msgid "Text elements"
+msgstr ""
+
+#. module: text_element_accounting
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element__move_type__in_invoice
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element_custom__move_type__in_invoice
+msgid "Vendor Bill"
+msgstr ""
+
+#. module: text_element_accounting
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element__move_type__in_refund
+#: model:ir.model.fields.selection,name:text_element_accounting.selection__text_element_custom__move_type__in_refund
+msgid "Vendor Credit Note"
+msgstr ""
