@@ -10,6 +10,15 @@
 <!-- prettier-ignore-start -->
 
 [//]: # (addons)
+
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[text_element_accounting](text_element_accounting/) | 18.0.1.0.0 |  | Text Elements - Accounting module
+[text_element_base](text_element_base/) | 18.0.1.0.0 |  | Text Elements - Base module
+[text_element_sale](text_element_sale/) | 18.0.1.0.0 |  | Text Elements - Sale module
+
 [//]: # (end addons)
 
 <!-- prettier-ignore-end -->
