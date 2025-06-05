@@ -1,0 +1,580 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* text_element_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__active
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__active
+msgid "Active"
+msgstr ""
+
+#. module: text_element_base
+#. odoo-python
+#: code:addons/text_element_base/models/text_element_abstract.py:0
+#: code:addons/text_element_base/wizards/add_text_element_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:text_element_base.add_text_element_wizard_form_view
+#, python-format
+msgid "Add Text Element"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model,name:text_element_base.model_add_text_element_wizard
+msgid "Add Text Element on record"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,help:text_element_base.field_text_element__page_break_after
+#: model:ir.model.fields,help:text_element_base.field_text_element_custom__page_break_after
+msgid "Add a page break after element"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,help:text_element_base.field_text_element__page_break_before
+#: model:ir.model.fields,help:text_element_base.field_text_element_custom__page_break_before
+msgid "Add a page break before element"
+msgstr ""
+
+#. module: text_element_base
+#: model_terms:ir.ui.view,arch_db:text_element_base.add_text_element_wizard_form_view
+msgid "Add and Close"
+msgstr ""
+
+#. module: text_element_base
+#: model_terms:ir.ui.view,arch_db:text_element_base.add_text_element_wizard_form_view
+msgid "Add and Continue"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__add_text_element_wizard__position__after
+#: model:ir.model.fields.selection,name:text_element_base.selection__edit_text_element_wizard__position__after
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__after
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__after
+msgid "After"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__add_text_element_wizard__position__after_line
+#: model:ir.model.fields.selection,name:text_element_base.selection__edit_text_element_wizard__position__after_line
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__after_line
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__after_line
+msgid "After Lines"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.ui.menu,name:text_element_base.text_element_menu_category
+msgid "All Elements"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__add_text_element_wizard__position__before
+#: model:ir.model.fields.selection,name:text_element_base.selection__edit_text_element_wizard__position__before
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__before
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__before
+msgid "Before"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__add_text_element_wizard__position__before_line
+#: model:ir.model.fields.selection,name:text_element_base.selection__edit_text_element_wizard__position__before_line
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__before_line
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__before_line
+msgid "Before Lines"
+msgstr ""
+
+#. module: text_element_base
+#: model_terms:ir.ui.view,arch_db:text_element_base.add_text_element_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:text_element_base.edit_text_element_wizard_form_view
+msgid "Close"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__company_id
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__company_id
+msgid "Company"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__content
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__content
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__content
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__content
+#: model_terms:ir.ui.view,arch_db:text_element_base.add_text_element_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:text_element_base.edit_text_element_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_form_view
+#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
+msgid "Content"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__create_uid
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__create_uid
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__create_uid
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__create_date
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__create_date
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__create_date
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__text_element_custom_id
+msgid "Custom Text Element"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.actions.act_window,name:text_element_base.text_element_custom_action
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_abstract__text_element_custom_ids
+#: model:ir.ui.menu,name:text_element_base.text_element_custom_menu
+msgid "Custom Text Elements"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model,name:text_element_base.model_text_element_custom
+msgid "Custom text elements"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__date_options
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__date_options
+msgid "Date Options"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__datetime_options
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__datetime_options
+msgid "Datetime Options"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__default
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__default
+msgid "Default"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__display_name
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__display_name
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__display_name
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: text_element_base
+#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
+msgid "Dynamic Placeholder Generator"
+msgstr ""
+
+#. module: text_element_base
+#. odoo-python
+#: code:addons/text_element_base/models/text_element_abstract.py:0
+#: code:addons/text_element_base/wizards/edit_sale_element_wizard.py:0
+#: model:ir.model,name:text_element_base.model_edit_text_element_wizard
+#: model_terms:ir.ui.view,arch_db:text_element_base.edit_text_element_wizard_form_view
+#, python-format
+msgid "Edit Text Element"
+msgstr ""
+
+#. module: text_element_base
+#: model_terms:ir.ui.view,arch_db:text_element_base.edit_text_element_wizard_form_view
+msgid "Edit and Close"
+msgstr ""
+
+#. module: text_element_base
+#: model_terms:ir.ui.view,arch_db:text_element_base.edit_text_element_wizard_form_view
+msgid "Edit and Continue"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__model_object_field
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__model_object_field
+msgid "Field"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__field_ttype
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__field_ttype
+msgid "Field Type"
+msgstr ""
+
+#. module: text_element_base
+#. odoo-python
+#: code:addons/text_element_base/models/text_element.py:0
+#, python-format
+msgid "Fields with several subfields is not supported (several dots)"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,help:text_element_base.field_text_element__copyvalue
+#: model:ir.model.fields,help:text_element_base.field_text_element_custom__copyvalue
+msgid ""
+"Final placeholder expression, to be copy-pasted in the desired template "
+"field."
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__id
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__id
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__id
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__id
+msgid "ID"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__lang
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__lang
+msgid "Lang"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__lang
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__lang
+msgid "Language"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__write_uid
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__write_uid
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__write_uid
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__write_date
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__write_date
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__write_date
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__res_model
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__res_model
+msgid "Model"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__is_edit
+msgid "Must be edited"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__name
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__name
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__name
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__name
+msgid "Name"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__datetime_options__date
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__datetime_options__date
+msgid "Only show the date"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__date_options__full
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__datetime_options__full_date
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__date_options__full
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__datetime_options__full_date
+msgid "Only show the date and in full text"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__datetime_options__time
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__datetime_options__time
+msgid "Only show the time"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,help:text_element_base.field_text_element__sequence
+#: model:ir.model.fields,help:text_element_base.field_text_element_custom__sequence
+msgid "Order of displayed text elements in the report."
+msgstr ""
+
+#. module: text_element_base
+#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
+msgid "Others informations"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__page_break_after
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__page_break_after
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__page_break_after
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__page_break_after
+msgid "Page Break After"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__page_break_before
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__page_break_before
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__page_break_before
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__page_break_before
+msgid "Page Break Before"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__copyvalue
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__copyvalue
+msgid "Placeholder Expression"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__position
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__position
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__position
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__position
+msgid "Position"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__res_id
+msgid "Record ID"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_abstract__report_lang
+msgid "Report Lang"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__res_id
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__res_id
+msgid "Res"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__res_model
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__res_model
+msgid "Res Model"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,help:text_element_base.field_text_element__model_object_field
+#: model:ir.model.fields,help:text_element_base.field_text_element_custom__model_object_field
+msgid ""
+"Select target field from the related document model.\n"
+"If it is a relationship field you will be able to select a target field at the destination of the relationship."
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__sequence
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__sequence
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__sequence
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__sub_model_object_field
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__sub_model_object_field
+msgid "Sub-field"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__sub_object
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__sub_object
+msgid "Sub-model"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__text_element_id
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__text_element_id
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__text_element_id
+msgid "Text Element"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__text_element_custom_domain
+msgid "Text Element Custom Domain"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__text_element_domain
+#: model:ir.model.fields,field_description:text_element_base.field_edit_text_element_wizard__text_element_domain
+msgid "Text Element Domain"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.actions.act_window,name:text_element_base.text_element_action
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_abstract__text_element_ids
+#: model:ir.ui.menu,name:text_element_base.text_element_menu
+#: model:ir.ui.menu,name:text_element_base.text_element_menu_root
+msgid "Text Elements"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model,name:text_element_base.model_text_element
+msgid "Text elements"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model,name:text_element_base.model_text_element_abstract
+msgid "Text elements (Abstract)"
+msgstr ""
+
+#. module: text_element_base
+#. odoo-python
+#: code:addons/text_element_base/models/text_element.py:0
+#, python-format
+msgid "The field %s must a many2one in order to use subfields"
+msgstr ""
+
+#. module: text_element_base
+#. odoo-python
+#: code:addons/text_element_base/wizards/add_text_element_wizard.py:0
+#, python-format
+msgid "This text element is already in the related record"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,field_description:text_element_base.field_text_element__user_id
+#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__user_id
+msgid "User"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,help:text_element_base.field_text_element__sub_model_object_field
+#: model:ir.model.fields,help:text_element_base.field_text_element_custom__sub_model_object_field
+msgid ""
+"When a relationship field is selected as first field, this field lets you "
+"select the target field within the destination document model (sub-model)."
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields,help:text_element_base.field_text_element__sub_object
+#: model:ir.model.fields,help:text_element_base.field_text_element_custom__sub_object
+msgid ""
+"When a relationship field is selected as first field, this field shows the "
+"document model the relationship goes to."
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__binary
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__binary
+msgid "binary"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__boolean
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__boolean
+msgid "boolean"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__char
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__char
+msgid "char"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__date
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__date
+msgid "date"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__datetime
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__datetime
+msgid "datetime"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__float
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__float
+msgid "float"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__html
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__html
+msgid "html"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__integer
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__integer
+msgid "integer"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__json
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__json
+msgid "json"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__many2many
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__many2many
+msgid "many2many"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__many2one
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__many2one
+msgid "many2one"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__many2one_reference
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__many2one_reference
+msgid "many2one_reference"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__monetary
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__monetary
+msgid "monetary"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__one2many
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__one2many
+msgid "one2many"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__properties
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__properties
+msgid "properties"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__properties_definition
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__properties_definition
+msgid "properties_definition"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__reference
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__reference
+msgid "reference"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__selection
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__selection
+msgid "selection"
+msgstr ""
+
+#. module: text_element_base
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__field_ttype__text
+#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__field_ttype__text
+msgid "text"
+msgstr ""
