@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0\n"
+"Project-Id-Version: Odoo Server 18.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -24,7 +24,6 @@ msgstr ""
 #: code:addons/text_element_base/models/text_element_abstract.py:0
 #: code:addons/text_element_base/wizards/add_text_element_wizard.py:0
 #: model_terms:ir.ui.view,arch_db:text_element_base.add_text_element_wizard_form_view
-#, python-format
 msgid "Add Text Element"
 msgstr ""
 
@@ -186,7 +185,6 @@ msgstr ""
 #: code:addons/text_element_base/wizards/edit_sale_element_wizard.py:0
 #: model:ir.model,name:text_element_base.model_edit_text_element_wizard
 #: model_terms:ir.ui.view,arch_db:text_element_base.edit_text_element_wizard_form_view
-#, python-format
 msgid "Edit Text Element"
 msgstr ""
 
@@ -215,7 +213,6 @@ msgstr ""
 #. module: text_element_base
 #. odoo-python
 #: code:addons/text_element_base/models/text_element.py:0
-#, python-format
 msgid "Fields with several subfields is not supported (several dots)"
 msgstr ""
 
@@ -432,14 +429,12 @@ msgstr ""
 #. module: text_element_base
 #. odoo-python
 #: code:addons/text_element_base/models/text_element.py:0
-#, python-format
 msgid "The field %s must a many2one in order to use subfields"
 msgstr ""
 
 #. module: text_element_base
 #. odoo-python
 #: code:addons/text_element_base/wizards/add_text_element_wizard.py:0
-#, python-format
 msgid "This text element is already in the related record"
 msgstr ""
 
