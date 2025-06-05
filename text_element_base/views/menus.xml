@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="text_element_menu_root"
+        name="Text Elements"
+        web_icon="text_element_base,static/description/icon.png"
+        groups="base.group_system"
+        sequence="265"
+    />
+
+    <menuitem
+        id="text_element_menu_category"
+        name="All Elements"
+        parent="text_element_base.text_element_menu_root"
+    />
+</odoo>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="text_element_layout">
+        <t
+            t-set="colclass"
+            t-value="('col-sm-5' if report_type == 'html' else 'col-5') + ' ml-auto'"
+        />
+        <t t-if="use_text_elements">
+            <t
+                t-set="text_elements"
+                t-value="text_element_record._get_text_elements(position)"
+            />
+            <t t-if="text_elements">
+                <t t-foreach="text_elements" t-as="text_element">
+                    <div
+                        t-out="text_element._get_content_interpreted(text_element_record)"
+                        t-att-style="'line-height:10px;page-break-before:always;' if text_element.page_break_before else ''"
+                    />
+                    <t t-if="text_element.page_break_after">
+                        <p style="page-break-before:always;" />
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="external_layout_striped" inherit_id="web.external_layout_striped">
+        <xpath expr="//t[@t-call='web.address_layout']" position="before">
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'before'" />
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'after'" />
+            </t>
+        </xpath>
+    </template>
+
+    <template id="external_layout_boxed" inherit_id="web.external_layout_boxed">
+        <xpath expr="//t[@t-call='web.address_layout']/parent::div" position="before">
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'before'" />
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'after'" />
+            </t>
+        </xpath>
+    </template>
+
+    <template id="external_layout_bold" inherit_id="web.external_layout_bold">
+        <xpath expr="//t[@t-call='web.address_layout']" position="before">
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'before'" />
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'after'" />
+            </t>
+        </xpath>
+    </template>
+
+    <template id="external_layout_standard" inherit_id="web.external_layout_standard">
+        <xpath expr="//t[@t-call='web.address_layout']/parent::div" position="before">
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'before'" />
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'after'" />
+            </t>
+        </xpath>
+    </template>
+</odoo>
