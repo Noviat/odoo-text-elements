@@ -157,7 +157,9 @@ class TextElement(models.Model):
             fields_found = re.findall(r"\[\[([^\]\]]*)\]\]*", self.content)
             content_interpreted = self.content
             for field_found in fields_found:
-                value = self._get_value_for_field(record, field_found, orm_fields)
+                value = self._get_value_for_field(
+                    record, field_found, orm_fields, self.env.lang
+                )
                 if value:
                     content_interpreted = content_interpreted.replace(
                         "[[" + field_found + "]]", value
