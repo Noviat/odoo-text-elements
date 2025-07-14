@@ -18,7 +18,7 @@
                         name="text_element_ids"
                         nolabel="1"
                         options="{'no_create_edit': True, 'no_create': True, 'no_edit': True}"
-                        context="{'default_res_id': id, 'default_res_model': 'account.move', 'form_view_ref': 'text_element_base.text_element_simplified_form_view', 'tree_view_ref': 'text_element_base.text_element_simplified_tree_view'}"
+                        context="{'default_res_id': id, 'default_res_model': 'account.move', 'form_view_ref': 'text_element_base.text_element_simplified_form_view', 'list_view_ref': 'text_element_base.text_element_simplified_list_view'}"
                         readonly="1"
                         force_save="1"
                     />
@@ -27,7 +27,7 @@
                         name="text_element_custom_ids"
                         nolabel="1"
                         options="{'no_create': True, 'no_create_edit': True, 'no_edit': True}"
-                        context="{'default_res_id': id, 'default_res_model': 'account.move', 'form_view_ref': 'text_element_base.text_element_custom_simplified_form_view', 'tree_view_ref': 'text_element_base.text_element_custom_simplified_tree_view'}"
+                        context="{'default_res_id': id, 'default_res_model': 'account.move', 'form_view_ref': 'text_element_base.text_element_custom_simplified_form_view', 'list_view_ref': 'text_element_base.text_element_custom_simplified_list_view'}"
                         force_save="1"
                     />
                 </page>
