@@ -14,7 +14,7 @@
                 <t t-foreach="text_elements" t-as="text_element">
                     <div
                         t-out="text_element._get_content_interpreted(text_element_record)"
-                        t-att-style="'line-height:10px;page-break-before:always;' if text_element.page_break_before else ''"
+                        t-att-style="'page-break-before:always;' if text_element.page_break_before else ''"
                     />
                     <t t-if="text_element.page_break_after">
                         <p style="page-break-before:always;" />
