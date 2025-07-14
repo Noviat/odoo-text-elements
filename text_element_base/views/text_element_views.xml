@@ -80,7 +80,7 @@
         </field>
     </record>
 
-    <record id="text_element_tree_view" model="ir.ui.view">
+    <record id="text_element_list_view" model="ir.ui.view">
         <field name="name">text.element.list</field>
         <field name="model">text.element</field>
         <field name="arch" type="xml">
@@ -115,10 +115,10 @@
         </field>
     </record>
 
-    <record id="text_element_simplified_tree_view" model="ir.ui.view">
-        <field name="name">text.element.simplified.tree</field>
+    <record id="text_element_simplified_list_view" model="ir.ui.view">
+        <field name="name">text.element.simplified.list</field>
         <field name="model">text.element</field>
-        <field name="inherit_id" ref="text_element_base.text_element_tree_view" />
+        <field name="inherit_id" ref="text_element_base.text_element_list_view" />
         <field name="mode">primary</field>
         <field name="priority">999</field>
         <field name="arch" type="xml">
