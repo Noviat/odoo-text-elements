@@ -112,18 +112,8 @@ class TextElement(models.Model):
             current_record.write({"text_element_ids": [Command.unlink(self.id)]})
 
     def action_remove(self):
-        current_record = False
-        if self.env.context.get("active_model", False) and self.env.context.get(
-            "active_id", 0
-        ):
-            current_record = self.env[self.env.context.get("active_model")].browse(
-                self.env.context.get("active_id")
-            )
-        else:
-            params = self.env.context.get("params")
-            if params and "model" in params and "id" in params:
-                current_record = self.env[params["model"]].browse(params["id"])
-        if current_record:
+        model_id, current_record = self._get_active_record()
+        if model_id and current_record:
             current_record.write({"text_element_ids": [(3, self.id)]})
         return
 
