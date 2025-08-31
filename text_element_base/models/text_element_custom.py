@@ -13,7 +13,9 @@ class TextElementCustom(models.Model):
     _order = "sequence, id"
     _check_company_auto = True
 
-    res_id = fields.Integer(required=True, string="Record ID")
+    res_id = fields.Many2oneReference(
+        required=True, model_field="model", string="Record ID"
+    )
     text_element_id = fields.Many2one(
         comodel_name="text.element", string="Text Element"
     )
