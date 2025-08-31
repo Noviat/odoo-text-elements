@@ -15,7 +15,9 @@ class AddTextElementWizard(models.TransientModel):
     text_element_domain = fields.Binary(
         compute="_compute_text_element_domain", store=False
     )
-    res_id = fields.Integer(default=lambda self: self._default_res_id())
+    res_id = fields.Many2oneReference(
+        default=lambda self: self._default_res_id(), model_field="res_model"
+    )
     res_model = fields.Char(default=lambda self: self._default_res_model())
 
     def _default_res_id(self):
