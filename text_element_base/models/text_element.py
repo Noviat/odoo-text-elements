@@ -4,7 +4,7 @@
 import logging
 import re
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import UserError
 from odoo.models import Command
 
@@ -176,14 +176,18 @@ class TextElement(models.Model):
         sub_fields = field_found.split(".")
         if len(sub_fields) > 2:
             raise NotImplementedError(
-                _("Fields with several subfields is not supported (several dots)")
+                self.env._(
+                    "Fields with several subfields is not supported (several dots)"
+                )
             )
         elif len(sub_fields) == 2:
             field = sub_fields[0]
             subfield = sub_fields[1]
             if field in orm_fields and orm_fields[field].get("type", "") != "many2one":
                 raise UserError(
-                    _("The field %s must a many2one in order to use subfields") % field
+                    self.env._(
+                        "The field %s must a many2one in order to use subfields", field
+                    )
                 )
             subrecord = getattr(record, field)
             if subrecord:
