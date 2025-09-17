@@ -75,4 +75,46 @@
             </t>
         </xpath>
     </template>
+
+    <template id="external_layout_folder" inherit_id="web.external_layout_folder">
+        <xpath expr="//t[@t-call='web.address_layout']/parent::div" position="before">
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'before'" />
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'after'" />
+            </t>
+        </xpath>
+    </template>
+
+    <template id="external_layout_wave" inherit_id="web.external_layout_wave">
+        <xpath expr="//t[@t-call='web.address_layout']" position="before">
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'before'" />
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'after'" />
+            </t>
+        </xpath>
+    </template>
+
+    <template id="external_layout_bubble" inherit_id="web.external_layout_bubble">
+        <xpath
+            expr="//td[@t-call='web.address_layout']/ancestor::table"
+            position="before"
+        >
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'before'" />
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="text_element_base.text_element_layout">
+                <t t-set="position" t-value="'after'" />
+            </t>
+        </xpath>
+    </template>
 </odoo>

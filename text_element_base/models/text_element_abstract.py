@@ -45,16 +45,6 @@ class TextElement(models.AbstractModel):
             "target": "new",
         }
 
-    def action_edit_element_wizard(self):
-        self.ensure_one()
-        return {
-            "name": _("Edit Text Element"),
-            "type": "ir.actions.act_window",
-            "view_mode": "form",
-            "res_model": "edit.text.element.wizard",
-            "target": "new",
-        }
-
     def _get_computed_elements_domain(self):
         self.ensure_one()
         return [
