@@ -1,12 +1,14 @@
 # Copyright 2009-2023 Noviat
 # License AGPL-3.0 or later (httpS://www.gnu.org/licenses/agpl).
 
+import datetime
 import logging
 import re
 
 from odoo import api, fields, models
 from odoo.exceptions import UserError
 from odoo.models import Command
+from odoo.tools.safe_eval import safe_eval
 
 _logger = logging.getLogger(__name__)
 
@@ -173,13 +175,28 @@ class TextElement(models.Model):
 
     def _get_value_for_field(self, record, field_found, orm_fields, lang):
         value = ""
+        try:
+            field_options = field_found.split("::")
+            if len(field_options) > 1:
+                field = safe_eval(f"record.{field_options[0]}", {"record": record})
+                option = field_options[1]
+                value = self._get_formated_value(
+                    field,
+                    lang,
+                    self._get_field_type(field),
+                    option,
+                )
+            else:
+                value = safe_eval(f"record.{field_found}", {"record": record})
+            if not isinstance(value, str):
+                value = str(value)
+            return value
+        except Exception:
+            _logger.error("Failed try eval of field_found %s", field_found)
         sub_fields = field_found.split(".")
         if len(sub_fields) > 2:
-            raise NotImplementedError(
-                self.env._(
-                    "Fields with several subfields is not supported (several dots)"
-                )
-            )
+            _logger.error("Failed try eval of field_found %s", field_found)
+            return value
         elif len(sub_fields) == 2:
             field = sub_fields[0]
             subfield = sub_fields[1]
@@ -243,3 +260,12 @@ class TextElement(models.Model):
         else:
             current_record = False
         return model_id, current_record
+
+    @api.model
+    def _get_field_type(self, field_object):
+        if isinstance(field_object, datetime.datetime):
+            return "datetime"
+        if isinstance(field_object, datetime.date):
+            return "date"
+        else:
+            return "str"
