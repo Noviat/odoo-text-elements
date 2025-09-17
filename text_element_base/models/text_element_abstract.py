@@ -3,7 +3,7 @@
 
 import logging
 
-from odoo import _, fields, models
+from odoo import fields, models
 from odoo.tools.safe_eval import safe_eval
 
 _logger = logging.getLogger(__name__)
@@ -38,7 +38,7 @@ class TextElement(models.AbstractModel):
     def action_add_element_wizard(self):
         self.ensure_one()
         return {
-            "name": _("Add Text Element"),
+            "name": self.env._("Add Text Element"),
             "type": "ir.actions.act_window",
             "view_mode": "form",
             "res_model": "add.text.element.wizard",

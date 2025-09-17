@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 
 class AddTextElementWizard(models.TransientModel):
@@ -69,7 +69,7 @@ class AddTextElementWizard(models.TransientModel):
             }
         )
         return {
-            "name": _("Add Text Element"),
+            "name": self.env._("Add Text Element"),
             "type": "ir.actions.act_window",
             "view_mode": "form",
             "res_model": "add.text.element.wizard",
