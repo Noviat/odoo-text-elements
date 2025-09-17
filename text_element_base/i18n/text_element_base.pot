@@ -186,12 +186,6 @@ msgid "Field Placeholder Generator Name"
 msgstr ""
 
 #. module: text_element_base
-#. odoo-python
-#: code:addons/text_element_base/models/text_element.py:0
-msgid "Fields with several subfields is not supported (several dots)"
-msgstr ""
-
-#. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__id
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__id
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__id

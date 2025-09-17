@@ -193,14 +193,6 @@ msgid "Field Placeholder Generator Name"
 msgstr ""
 
 #. module: text_element_base
-#. odoo-python
-#: code:addons/text_element_base/models/text_element.py:0
-msgid "Fields with several subfields is not supported (several dots)"
-msgstr ""
-"Les champs comportant plusieurs sous-champs ne sont pas pris en charge "
-"(plusieurs points)"
-
-#. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__id
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__id
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__id
@@ -350,6 +342,11 @@ msgstr "Utilisateur"
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "e.g. Contact"
 msgstr "ex. : Contact"
+
+#~ msgid "Fields with several subfields is not supported (several dots)"
+#~ msgstr ""
+#~ "Les champs comportant plusieurs sous-champs ne sont pas pris en charge "
+#~ "(plusieurs points)"
 
 #~ msgid "Edit Text Element"
 #~ msgstr "Modifier l'élément de texte"
