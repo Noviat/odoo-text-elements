@@ -1,7 +1,7 @@
 # Copyright 2009-2023 Noviat
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class AccountMove(models.Model):
@@ -14,3 +14,7 @@ class AccountMove(models.Model):
     text_element_custom_ids = fields.One2many(
         domain=["|", ("model", "=", "account.move"), ("model", "=", False)]
     )
+
+    @api.depends("partner_id")
+    def _compute_text_elements(self):
+        return super()._compute_text_elements()
