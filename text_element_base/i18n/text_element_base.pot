@@ -174,12 +174,6 @@ msgid "Dynamic placerholder generator"
 msgstr ""
 
 #. module: text_element_base
-#. odoo-python
-#: code:addons/text_element_base/models/text_element_abstract.py:0
-msgid "Edit Text Element"
-msgstr ""
-
-#. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__field_placeholder_generator
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__field_placeholder_generator
 msgid "Field Placeholder Generator"
