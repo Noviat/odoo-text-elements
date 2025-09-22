@@ -15,6 +15,6 @@ class SaleOrder(models.Model):
         domain=["|", ("model", "=", "sale.order"), ("model", "=", False)]
     )
 
-    @api.depends("partner_id")
+    @api.depends("partner_id", "company_id")
     def _compute_text_elements(self):
         return super()._compute_text_elements()
