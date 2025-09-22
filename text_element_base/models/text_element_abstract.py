@@ -47,7 +47,7 @@ class TextElement(models.AbstractModel):
 
     def _get_computed_elements_domain(self):
         self.ensure_one()
-        return [
+        domain = [
             ("default", "=", True),
             "|",
             ("model", "=", self._name),
@@ -56,6 +56,9 @@ class TextElement(models.AbstractModel):
             ("user_id", "=", False),
             ("user_id", "=", self.env.user.id),
         ]
+        if "company_id" in self._fields:
+            domain.append(("company_id", "in", (self.company_id.id, False)))
+        return domain
 
     def _get_text_elements(self, position):
         self.ensure_one()
