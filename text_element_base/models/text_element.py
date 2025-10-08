@@ -175,7 +175,8 @@ class TextElement(models.Model):
 
     def _get_value_for_field(self, record, field_found, orm_fields, lang):
         value = ""
-        try:
+        sub_fields = field_found.split(".")
+        if len(sub_fields) > 2:
             field_options = field_found.split("::")
             if len(field_options) > 1:
                 field = safe_eval(f"record.{field_options[0]}", {"record": record})
@@ -187,15 +188,12 @@ class TextElement(models.Model):
                     option,
                 )
             else:
-                value = safe_eval(f"record.{field_found}", {"record": record})
-            if not isinstance(value, str):
-                value = str(value)
-            return value
-        except Exception:
-            _logger.error("Failed try eval of field_found %s", field_found)
-        sub_fields = field_found.split(".")
-        if len(sub_fields) > 2:
-            _logger.error("Failed try eval of field_found %s", field_found)
+                field = safe_eval(f"record.{field_found}", {"record": record})
+                value = self._get_formated_value(
+                    field,
+                    lang,
+                    self._get_field_type(field),
+                )
             return value
         elif len(sub_fields) == 2:
             field = sub_fields[0]
