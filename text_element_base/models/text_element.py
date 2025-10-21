@@ -121,7 +121,7 @@ class TextElement(models.Model):
 
     @api.model
     def _get_formated_value(self, value, lang, field_type="str", options=""):
-        if not value:
+        if value is None or value == "":
             return ""
         if field_type == "datetime":
             if options == "date":
@@ -149,6 +149,14 @@ class TextElement(models.Model):
             )
         elif field_type == "binary":
             return self.env["ir.qweb.field.image"].value_to_html(value, {})
+        elif isinstance(value, int):
+            return self.env["ir.qweb.field.integer"].value_to_html(value, {})
+        elif isinstance(value, float):
+            return self.env["ir.qweb.field.float"].value_to_html(
+                value, {"precision": 2}
+            )
+        elif not isinstance(value, str):
+            return str(value)
         else:
             return value
 
