@@ -48,8 +48,8 @@ class TextElement(models.Model):
     )
     active = fields.Boolean(default=True)
     model_id = fields.Many2one(
-        "ir.model",
-        "Applies to",
+        comodel_name="ir.model",
+        string="Applies to",
         ondelete="cascade",
         domain="[('can_be_used_with_text_elements','=', True)]",
     )
