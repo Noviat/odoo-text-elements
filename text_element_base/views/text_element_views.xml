@@ -6,6 +6,12 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="text-bg-danger"
+                        invisible="active"
+                    />
                     <group>
                         <group>
                             <field name="name" />
@@ -66,7 +72,11 @@
                         </page>
                         <page name="other_informations" string="Others informations">
                             <group>
-                                <field name="user_id" widget="many2one_avatar" />
+                                <field
+                                    name="user_id"
+                                    widget="many2one_avatar"
+                                    invisible="1"
+                                />
                                 <field name="sequence" />
                                 <field
                                     name="company_id"
@@ -84,21 +94,80 @@
         <field name="name">text.element.list</field>
         <field name="model">text.element</field>
         <field name="arch" type="xml">
-            <list>
+            <list multi_edit="1">
+                <field name="active" column_invisible="True" />
                 <field name="sequence" widget="handle" />
                 <field name="name" />
                 <field name="position" />
                 <field name="page_break_before" />
                 <field name="page_break_after" />
                 <field name="default" />
-                <field name="model_id" />
+                <field name="model_id" readonly="1" />
                 <field
                     name="company_id"
                     groups="base.group_multi_company"
                     optional="hide"
                 />
-                <field name="user_id" widget="many2one_avatar" optional="show" />
+                <field
+                    name="user_id"
+                    widget="many2one_avatar"
+                    optional="show"
+                    column_invisible="1"
+                />
             </list>
+        </field>
+    </record>
+
+    <record id="text_element_search_view" model="ir.ui.view">
+        <field name="name">text.element.search</field>
+        <field name="model">text.element</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="content" />
+                <field name="model_id" />
+                <separator />
+                <filter
+                    name="before"
+                    string="Before the document"
+                    domain="[('position', '=', 'before')]"
+                />
+                <filter
+                    name="before_line"
+                    string="Before Lines (if applicable)"
+                    domain="[('position', '=', 'before_line')]"
+                />
+                <filter
+                    name="after_line"
+                    string="After Lines (if applicable)"
+                    domain="[('position', '=', 'after_line')]"
+                />
+                <filter
+                    name="after"
+                    string="After the document"
+                    domain="[('position', '=', 'after')]"
+                />
+                <separator />
+                <filter
+                    name="default"
+                    string="Default"
+                    domain="[('default', '=', True)]"
+                />
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+                <group expand="0" string="Group By">
+                    <filter
+                        name="group_manager"
+                        string="Applies to"
+                        domain="[]"
+                        context="{'group_by':'model_id'}"
+                    />
+                </group>
+            </search>
         </field>
     </record>
 
