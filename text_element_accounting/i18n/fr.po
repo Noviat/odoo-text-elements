@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2025-02-16 20:41+0000\n"
 "PO-Revision-Date: 2025-09-01 00:07+0000\n"
 "Last-Translator: admin <support@noviat.com>\n"
-"Language-Team: French <https://translation.noviat.com/projects/"
-"noviat-generic-odoo-text-elements-v18/text_element_accounting/fr/>\n"
+"Language-Team: French <https://translation.noviat.com/projects/noviat-"
+"generic-odoo-text-elements-v18/text_element_accounting/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,6 +36,11 @@ msgstr "Éléments de texte personnalisés"
 #: model:ir.model,name:text_element_accounting.model_account_move
 msgid "Journal Entry"
 msgstr "Pièce comptable"
+
+#. module: text_element_accounting
+#: model_terms:ir.ui.view,arch_db:text_element_accounting.view_move_form
+msgid "Reload default text elements"
+msgstr ""
 
 #. module: text_element_accounting
 #: model:ir.model.fields,field_description:text_element_accounting.field_account_bank_statement_line__text_element_ids

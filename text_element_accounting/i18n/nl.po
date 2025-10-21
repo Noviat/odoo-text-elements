@@ -34,6 +34,11 @@ msgid "Journal Entry"
 msgstr "Boeking"
 
 #. module: text_element_accounting
+#: model_terms:ir.ui.view,arch_db:text_element_accounting.view_move_form
+msgid "Reload default text elements"
+msgstr ""
+
+#. module: text_element_accounting
 #: model:ir.model.fields,field_description:text_element_accounting.field_account_bank_statement_line__text_element_ids
 #: model:ir.model.fields,field_description:text_element_accounting.field_account_move__text_element_ids
 #: model_terms:ir.ui.view,arch_db:text_element_accounting.view_move_form
