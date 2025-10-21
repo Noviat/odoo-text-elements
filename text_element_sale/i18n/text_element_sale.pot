@@ -25,6 +25,11 @@ msgid "Custom Text Elements"
 msgstr ""
 
 #. module: text_element_sale
+#: model_terms:ir.ui.view,arch_db:text_element_sale.view_order_form
+msgid "Reload default text elements"
+msgstr ""
+
+#. module: text_element_sale
 #: model:ir.model,name:text_element_sale.model_sale_order
 msgid "Sales Order"
 msgstr ""
