@@ -69,14 +69,12 @@ msgstr ""
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__after_line
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__after_line
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "After Lines (if applicable)"
 msgstr ""
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__after
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__after
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "After the document"
 msgstr ""
 
@@ -88,7 +86,6 @@ msgstr ""
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__model_id
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__model_id
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Applies to"
 msgstr ""
 
@@ -99,22 +96,14 @@ msgid "Apply on"
 msgstr ""
 
 #. module: text_element_base
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
-msgid "Archived"
-msgstr ""
-
-#. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__before_line
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__before_line
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Before Lines (if applicable)"
 msgstr ""
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__before
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__before
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Before the document"
 msgstr ""
 
@@ -176,7 +165,6 @@ msgstr ""
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__default
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__default
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Default"
 msgstr ""
 
@@ -202,11 +190,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__field_placeholder_generator_name
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__field_placeholder_generator_name
 msgid "Field Placeholder Generator Name"
-msgstr ""
-
-#. module: text_element_base
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
-msgid "Group By"
 msgstr ""
 
 #. module: text_element_base
