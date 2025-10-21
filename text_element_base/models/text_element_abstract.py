@@ -45,6 +45,9 @@ class TextElement(models.AbstractModel):
             "target": "new",
         }
 
+    def action_reload_default_text_elements(self):
+        self._compute_text_elements()
+
     def _get_computed_elements_domain(self):
         self.ensure_one()
         domain = [
