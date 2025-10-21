@@ -13,6 +13,12 @@
                         type="object"
                         class="btn-primary"
                     />
+                    <button
+                        string="Reload default text elements"
+                        name="action_reload_default_text_elements"
+                        type="object"
+                        class="btn-primary ms-1"
+                    />
                     <separator string="Text Elements" />
                     <field
                         name="text_element_ids"
