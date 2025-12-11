@@ -9,16 +9,17 @@ msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 20:41+0000\n"
-"PO-Revision-Date: 2025-09-01 00:07+0000\n"
-"Last-Translator: admin <support@noviat.com>\n"
-"Language-Team: French <https://translation.noviat.com/projects/noviat-"
-"generic-odoo-text-elements-v18/text_element_sale/fr/>\n"
+"PO-Revision-Date: 2025-12-11 18:30+0000\n"
+"Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
+"memory@weblate.org>\n"
+"Language-Team: French <https://translation.noviat.com/projects/"
+"noviat-generic-odoo-text-elements-v19/text_element_sale/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.12.2\n"
+"X-Generator: Weblate 5.13.3\n"
 
 #. module: text_element_sale
 #: model_terms:ir.ui.view,arch_db:text_element_sale.view_order_form
@@ -34,17 +35,17 @@ msgstr "Éléments de texte personnalisés"
 #. module: text_element_sale
 #: model:ir.model.fields,field_description:text_element_sale.field_sale_order__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom affiché"
 
 #. module: text_element_sale
 #: model:ir.model.fields,field_description:text_element_sale.field_sale_order__id
 msgid "ID"
-msgstr ""
+msgstr "Identifiant"
 
 #. module: text_element_sale
 #: model_terms:ir.ui.view,arch_db:text_element_sale.view_order_form
 msgid "Reload default text elements"
-msgstr ""
+msgstr "Recharger les éléments de texte par défaut"
 
 #. module: text_element_sale
 #: model:ir.model,name:text_element_sale.model_sale_order
