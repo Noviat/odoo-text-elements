@@ -5,9 +5,8 @@ import datetime
 import logging
 import re
 
-from odoo import api, fields, models
+from odoo import Command, api, fields, models
 from odoo.exceptions import UserError
-from odoo.models import Command
 from odoo.tools.safe_eval import safe_eval
 
 _logger = logging.getLogger(__name__)

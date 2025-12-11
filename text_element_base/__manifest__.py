@@ -3,12 +3,11 @@
 
 {
     "name": "Text Elements - Base module",
-    "version": "18.0.2.2.0",
+    "version": "19.0.1.0.0",
     "license": "AGPL-3",
     "author": "Noviat, Elneo",
     "website": "https://www.noviat.com/",
     "category": "Tools",
-    "summary": "Text Elements - Base module",
     "depends": ["base", "web", "mail"],
     "data": [
         "security/ir.model.access.csv",
@@ -20,5 +19,4 @@
         "views/text_element_custom_views.xml",
         "wizards/add_text_element_wizard.xml",
     ],
-    "installable": True,
 }

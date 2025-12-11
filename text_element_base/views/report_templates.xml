@@ -38,7 +38,7 @@
     </template>
 
     <template id="external_layout_boxed" inherit_id="web.external_layout_boxed">
-        <xpath expr="//t[@t-call='web.address_layout']/parent::div" position="before">
+        <xpath expr="//t[@t-call='web.address_layout']" position="before">
             <t t-call="text_element_base.text_element_layout">
                 <t t-set="position" t-value="'before'" />
             </t>
@@ -64,7 +64,7 @@
     </template>
 
     <template id="external_layout_standard" inherit_id="web.external_layout_standard">
-        <xpath expr="//t[@t-call='web.address_layout']/parent::div" position="before">
+        <xpath expr="//t[@t-call='web.address_layout']" position="before">
             <t t-call="text_element_base.text_element_layout">
                 <t t-set="position" t-value="'before'" />
             </t>
@@ -104,7 +104,7 @@
 
     <template id="external_layout_bubble" inherit_id="web.external_layout_bubble">
         <xpath
-            expr="//td[@t-call='web.address_layout']/ancestor::table"
+            expr="//t[@t-call='web.address_layout']/ancestor::table"
             position="before"
         >
             <t t-call="text_element_base.text_element_layout">
