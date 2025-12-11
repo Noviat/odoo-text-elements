@@ -11,8 +11,8 @@ msgstr ""
 "PO-Revision-Date: 2025-10-22 10:03+0000\n"
 "Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
 "memory@weblate.org>\n"
-"Language-Team: Dutch <https://translation.noviat.com/projects/"
-"noviat-generic-odoo-text-elements-v18/text_element_sale/nl/>\n"
+"Language-Team: Dutch <https://translation.noviat.com/projects/noviat-generic-"
+"odoo-text-elements-v18/text_element_sale/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,6 +30,16 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:text_element_sale.view_order_form
 msgid "Custom Text Elements"
 msgstr "Tekstelementen (op maat)"
+
+#. module: text_element_sale
+#: model:ir.model.fields,field_description:text_element_sale.field_sale_order__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: text_element_sale
+#: model:ir.model.fields,field_description:text_element_sale.field_sale_order__id
+msgid "ID"
+msgstr ""
 
 #. module: text_element_sale
 #: model_terms:ir.ui.view,arch_db:text_element_sale.view_order_form
