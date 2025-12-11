@@ -3,7 +3,7 @@
 
 {
     "name": "Text Elements - Sale module",
-    "version": "18.0.2.1.0",
+    "version": "19.0.1.0.0",
     "license": "AGPL-3",
     "author": "Noviat, Elneo",
     "website": "https://www.noviat.com/",
@@ -14,6 +14,5 @@
         "views/sale_order_report.xml",
         "views/sale_order_views.xml",
     ],
-    "installable": True,
     "post_init_hook": "_enable_text_element_on_sale",
 }
