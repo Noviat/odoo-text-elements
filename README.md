@@ -9,6 +9,13 @@
 <!-- prettier-ignore-start -->
 
 [//]: # (addons)
+
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[text_element_base](text_element_base/) | 19.0.1.0.0 |  | Text Elements - Base module
+
 [//]: # (end addons)
 
 <!-- prettier-ignore-end -->
