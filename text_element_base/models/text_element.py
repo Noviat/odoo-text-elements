@@ -121,7 +121,7 @@ class TextElement(models.Model):
 
     @api.model
     def _get_formated_value(self, value, lang, field_type="str", options=""):
-        if value is None or value == "":
+        if value is None or value == "" or not value:
             return ""
         if field_type == "datetime":
             if options == "date":
