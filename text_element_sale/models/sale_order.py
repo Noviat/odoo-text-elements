@@ -12,7 +12,8 @@ class SaleOrder(models.Model):
         domain=["|", ("model", "=", "sale.order"), ("model", "=", False)]
     )
     text_element_custom_ids = fields.One2many(
-        domain=["|", ("model", "=", "sale.order"), ("model", "=", False)]
+        domain=["|", ("model", "=", "sale.order"), ("model", "=", False)],
+        context={"text_element_parent_model": "sale.order"},
     )
 
     @api.depends("partner_id", "company_id")
