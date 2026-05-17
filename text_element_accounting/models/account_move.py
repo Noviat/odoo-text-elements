@@ -12,7 +12,8 @@ class AccountMove(models.Model):
         domain=["|", ("model", "=", "account.move"), ("model", "=", False)]
     )
     text_element_custom_ids = fields.One2many(
-        domain=["|", ("model", "=", "account.move"), ("model", "=", False)]
+        domain=["|", ("model", "=", "account.move"), ("model", "=", False)],
+        context={"text_element_parent_model": "account.move"},
     )
 
     @api.depends("partner_id", "company_id")
