@@ -22,342 +22,230 @@ msgstr ""
 
 #. module: text_element_base
 #. odoo-python
-#: code:addons/text_element_base/models/text_element_custom.py:0
 msgid "A custom text element must be linked to a model (field 'Applies to')."
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__active
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__active
 msgid "Active"
 msgstr "Actief"
 
 #. module: text_element_base
 #. odoo-python
-#: code:addons/text_element_base/models/text_element_abstract.py:0
-#: code:addons/text_element_base/wizards/add_text_element_wizard.py:0
-#: model_terms:ir.ui.view,arch_db:text_element_base.add_text_element_wizard_form_view
 msgid "Add Text Element"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model,name:text_element_base.model_add_text_element_wizard
 msgid "Add Text Element on record"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,help:text_element_base.field_text_element__page_break_after
-#: model:ir.model.fields,help:text_element_base.field_text_element_custom__page_break_after
 msgid "Add a page break after element"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,help:text_element_base.field_text_element__page_break_before
-#: model:ir.model.fields,help:text_element_base.field_text_element_custom__page_break_before
 msgid "Add a page break before element"
 msgstr ""
 
 #. module: text_element_base
-#: model_terms:ir.ui.view,arch_db:text_element_base.add_text_element_wizard_form_view
 msgid "Add and Close"
 msgstr ""
 
 #. module: text_element_base
-#: model_terms:ir.ui.view,arch_db:text_element_base.add_text_element_wizard_form_view
 msgid "Add and Continue"
 msgstr ""
 
 #. module: text_element_base
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_simplified_list_view
 msgid "Add text element to custom elements"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__after_line
-#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__after_line
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "After Lines (if applicable)"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__after
-#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__after
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "After the document"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.ui.menu,name:text_element_base.text_element_menu_category
 msgid "All Elements"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__model_id
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__model_id
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Applies to"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__filter_domain
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__filter_domain
 msgid "Apply on"
 msgstr ""
 
 #. module: text_element_base
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Archived"
 msgstr "Gearchiveerd"
 
 #. module: text_element_base
-#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__before_line
-#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__before_line
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Before Lines (if applicable)"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__before
-#: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__before
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Before the document"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_ir_model__can_be_used_with_text_elements
 msgid "Can Be Used With Text Elements"
 msgstr ""
 
 #. module: text_element_base
-#: model_terms:ir.ui.view,arch_db:text_element_base.add_text_element_wizard_form_view
 msgid "Close"
 msgstr "Sluiten"
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__company_id
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__company_id
 msgid "Company"
 msgstr "Bedrijf"
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__content
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__content
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "Content"
 msgstr "Inhoud"
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__context_params
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__context_params
 msgid "Context Params"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__create_uid
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__create_uid
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__create_uid
 msgid "Created by"
 msgstr "Gemaakt door"
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__create_date
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__create_date
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__create_date
 msgid "Created on"
 msgstr "Gemaakt op"
 
 #. module: text_element_base
-#: model:ir.actions.act_window,name:text_element_base.text_element_custom_action
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_abstract__text_element_custom_ids
-#: model:ir.ui.menu,name:text_element_base.text_element_custom_menu
 msgid "Custom Text Elements"
 msgstr "Tekstelementen (op maat)"
 
 #. module: text_element_base
-#: model:ir.model,name:text_element_base.model_text_element_custom
 msgid "Custom text elements"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__default
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__default
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Default"
 msgstr "Standaard"
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__display_name
-#: model:ir.model.fields,field_description:text_element_base.field_ir_model__display_name
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__display_name
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_abstract__display_name
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__display_name
 msgid "Display Name"
 msgstr "Weergavenaam"
 
 #. module: text_element_base
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "Dynamic placerholder generator"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__field_placeholder_generator
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__field_placeholder_generator
 msgid "Field Placeholder Generator"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__field_placeholder_generator_name
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__field_placeholder_generator_name
 msgid "Field Placeholder Generator Name"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__id
-#: model:ir.model.fields,field_description:text_element_base.field_ir_model__id
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__id
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_abstract__id
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__id
 msgid "ID"
 msgstr "ID"
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__write_uid
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__write_uid
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__write_uid
 msgid "Last Updated by"
 msgstr "Laatst bijgewerkt door"
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__write_date
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__write_date
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__write_date
 msgid "Last Updated on"
 msgstr "Laatst bijgewerkt op"
 
 #. module: text_element_base
-#: model:ir.model,name:text_element_base.model_ir_model
 msgid "Models"
 msgstr "Modellen"
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__name
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__name
 msgid "Name"
 msgstr "Naam"
 
 #. module: text_element_base
-#: model:ir.model.fields,help:text_element_base.field_text_element__sequence
-#: model:ir.model.fields,help:text_element_base.field_text_element_custom__sequence
 msgid "Order of displayed text elements in the report."
 msgstr ""
 
 #. module: text_element_base
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "Others informations"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__page_break_after
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__page_break_after
 msgid "Page Break After"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__page_break_before
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__page_break_before
 msgid "Page Break Before"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,help:text_element_base.field_text_element__context_params
-#: model:ir.model.fields,help:text_element_base.field_text_element_custom__context_params
 msgid ""
 "Params have to be separated with semicolon and can be prefixed "
 "withexclamation mark (e.g proforma;!proforma)"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__position
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__position
 msgid "Position"
 msgstr "Positie"
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__res_id
 msgid "Record ID"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__model
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__model
 msgid "Related Document Model"
 msgstr ""
 
 #. module: text_element_base
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_simplified_list_view
 msgid "Remove text element"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__res_id
 msgid "Res"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__res_model
 msgid "Res Model"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__sequence
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__sequence
 msgid "Sequence"
 msgstr "Reeks"
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__text_element_id
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__text_element_id
 msgid "Text Element"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_add_text_element_wizard__text_element_domain
 msgid "Text Element Domain"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.actions.act_window,name:text_element_base.text_element_action
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_abstract__text_element_ids
-#: model:ir.ui.menu,name:text_element_base.text_element_menu
-#: model:ir.ui.menu,name:text_element_base.text_element_menu_root
 msgid "Text Elements"
 msgstr "Tekstelementen"
 
 #. module: text_element_base
-#: model:ir.model,name:text_element_base.model_text_element
 msgid "Text elements"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model,name:text_element_base.model_text_element_abstract
 msgid "Text elements (Abstract)"
 msgstr ""
 
 #. module: text_element_base
 #. odoo-python
-#: code:addons/text_element_base/models/text_element.py:0
 msgid "The field %s must a many2one in order to use subfields"
 msgstr ""
 
 #. module: text_element_base
-#: model:ir.model.fields,field_description:text_element_base.field_text_element__user_id
-#: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__user_id
 msgid "User"
 msgstr "Gebruiker"
 
 #. module: text_element_base
-#: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "e.g. Contact"
 msgstr ""
 
