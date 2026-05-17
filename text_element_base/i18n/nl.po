@@ -21,6 +21,12 @@ msgstr ""
 "X-Generator: Weblate 5.13.3\n"
 
 #. module: text_element_base
+#. odoo-python
+#: code:addons/text_element_base/models/text_element_custom.py:0
+msgid "A custom text element must be linked to a model (field 'Applies to')."
+msgstr ""
+
+#. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__active
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__active
 msgid "Active"
