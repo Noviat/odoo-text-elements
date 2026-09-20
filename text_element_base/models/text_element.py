@@ -163,7 +163,14 @@ class TextElement(models.Model):
     def _get_content_interpreted(self, record):
         self.ensure_one()
         if self.content:
-            orm_fields = record.fields_get()
+            # Only the type of each field is ever read from this, and asking
+            # for the rest is not free: a full description evaluates every
+            # field's domain, and a callable domain runs. sale.order.user_id
+            # has one, and it calls env.ref(), which issues a SQL query on
+            # every call -- Environment.ref checks exists() and caches nothing.
+            # Rendering a report calls this method once per text element, so
+            # that was measured at 2237 queries for a single order confirmation.
+            orm_fields = record.fields_get(attributes=["type"])
             fields_found = re.findall(r"\[\[([^\]\]]*)\]\]*", self.content)
             content_interpreted = self.content
             for field_found in fields_found:
@@ -214,7 +221,8 @@ class TextElement(models.Model):
                 )
             subrecord = getattr(record, field)
             if subrecord:
-                orm_sub_fields = subrecord.fields_get()
+                # Same as above: only the type is read from this one too.
+                orm_sub_fields = subrecord.fields_get(attributes=["type"])
                 subfield_options = subfield.split("::")
                 if len(subfield_options) > 1:
                     subfield = subfield_options[0]

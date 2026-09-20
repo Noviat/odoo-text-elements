@@ -3,7 +3,7 @@
 
 {
     "name": "Text Elements - Base module",
-    "version": "18.0.2.2.0",
+    "version": "18.0.2.2.1",
     "license": "AGPL-3",
     "author": "Noviat, Elneo",
     "website": "https://www.noviat.com/",
