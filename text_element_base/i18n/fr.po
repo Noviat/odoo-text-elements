@@ -2,24 +2,24 @@
 # This file contains the translation of the following modules:
 # * text_element_base
 #
-# Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2025.
+# Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2025, 2026.
 # admin <support@noviat.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 20:41+0000\n"
-"PO-Revision-Date: 2025-10-21 09:47+0000\n"
+"PO-Revision-Date: 2026-10-11 20:03+0000\n"
 "Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
 "memory@weblate.org>\n"
-"Language-Team: French <https://translation.noviat.com/projects/noviat-"
-"generic-odoo-text-elements-v18/text_element_base/fr/>\n"
+"Language-Team: French <https://translation.noviat.io/projects/noviat-generic-"
+"odoo-text-elements-v18/text_element_base/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.13.3\n"
+"X-Generator: Weblate 2026.9.1\n"
 
 #. module: text_element_base
 #. odoo-python
@@ -106,7 +106,7 @@ msgstr ""
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "All companies"
-msgstr ""
+msgstr "Toutes les sociétés"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
@@ -123,12 +123,12 @@ msgstr "Archivé"
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Automatic"
-msgstr ""
+msgstr "Automatique"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_document_form_view
 msgid "Based on"
-msgstr ""
+msgstr "Basé sur"
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__before_line
@@ -185,7 +185,7 @@ msgstr "Société"
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__filter_domain
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_list_view
 msgid "Condition"
-msgstr ""
+msgstr "Condition"
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__preview_status__condition_not_met
@@ -196,7 +196,7 @@ msgstr ""
 #. module: text_element_base
 #: model:ir.ui.menu,name:text_element_base.text_element_menu_category
 msgid "Configuration"
-msgstr ""
+msgstr "Configuration"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__content
@@ -243,7 +243,7 @@ msgstr "Nom d'affichage"
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__model
 msgid "Document Model"
-msgstr ""
+msgstr "Modèle de document"
 
 #. module: text_element_base
 #: model:ir.model,name:text_element_base.model_text_element_custom
@@ -262,7 +262,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_search_view
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Document type"
-msgstr ""
+msgstr "Type de document"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_document_list_view
@@ -272,12 +272,12 @@ msgstr ""
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Expired"
-msgstr ""
+msgstr "Expiré"
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__kind__free
 msgid "Free text"
-msgstr ""
+msgstr "Texte libre"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_search_view
@@ -343,7 +343,7 @@ msgstr ""
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__origin
 msgid "Origin"
-msgstr ""
+msgstr "Origine"
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__preview_status__out_of_period
@@ -396,7 +396,7 @@ msgstr ""
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "Preview"
-msgstr ""
+msgstr "Aperçu"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__preview_html
@@ -426,7 +426,7 @@ msgstr ""
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__print_status__printed
 msgid "Printed"
-msgstr ""
+msgstr "Imprimé"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__res_id
@@ -441,7 +441,7 @@ msgstr "Modèle de document associé"
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_document_list_view
 msgid "Revert"
-msgstr ""
+msgstr "Revenir"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__preview_record
@@ -457,7 +457,7 @@ msgstr "Séquence"
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__kind
 msgid "Source"
-msgstr ""
+msgstr "Source"
 
 #. module: text_element_base
 #: model:ir.model.fields,help:text_element_base.field_text_element__page_break_after
@@ -472,14 +472,14 @@ msgstr ""
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_document_list_view
 msgid "Status"
-msgstr ""
+msgstr "Statut"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_document_list_view
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_list_view
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_simplified_list_view
 msgid "Text"
-msgstr ""
+msgstr "Texte"
 
 #. module: text_element_base
 #: model:ir.actions.act_window,name:text_element_base.text_element_action
@@ -562,12 +562,12 @@ msgstr "Utilisateur"
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "Valid"
-msgstr ""
+msgstr "Valide"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__date_from
 msgid "Valid from"
-msgstr ""
+msgstr "Valide à partir du/de"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
@@ -577,17 +577,17 @@ msgstr ""
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__date_to
 msgid "Valid until"
-msgstr ""
+msgstr "Valide jusqu'à"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "When"
-msgstr ""
+msgstr "Quand"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "Where"
-msgstr ""
+msgstr "Où"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
