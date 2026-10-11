@@ -12,77 +12,103 @@
                         bg_color="text-bg-danger"
                         invisible="active"
                     />
+                    <field name="active" invisible="1" />
+                    <field name="model" invisible="1" />
+                    <div class="oe_title">
+                        <label for="name" />
+                        <h1>
+                            <field
+                                name="name"
+                                placeholder="e.g. Annual closure notice"
+                            />
+                        </h1>
+                    </div>
                     <group>
-                        <group>
-                            <field name="name" />
-                            <field name="position" />
-                            <field name="model" invisible="1" />
+                        <group name="where" string="Where">
                             <field
                                 name="model_id"
-                                placeholder="e.g. Contact"
-                                options="{'no_create': True}"
+                                placeholder="All documents"
+                                options="{'no_create': True, 'no_open': True}"
                             />
+                            <field name="position" />
+                            <field name="sequence" />
+                            <label for="page_break_before" string="Page break" />
+                            <div class="o_row">
+                                <field name="page_break_before" nolabel="1" />
+                                <span>before</span>
+                                <field name="page_break_after" nolabel="1" />
+                                <span>after</span>
+                            </div>
+                        </group>
+                        <group name="when" string="When">
+                            <field name="default" />
                             <field
                                 name="filter_domain"
                                 widget="domain"
-                                groups="!base.group_no_one"
-                                options="{'model': 'model', 'in_dialog': False, 'foldable': True}"
-                                invisible="not model_id"
-                            />
-                            <field
-                                name="filter_domain"
-                                widget="domain"
-                                groups="base.group_no_one"
                                 options="{'model': 'model', 'in_dialog': True}"
                                 invisible="not model_id"
                             />
-                        </group>
-                        <group>
-                            <field name="page_break_before" />
-                            <field name="page_break_after" />
-                            <field name="default" />
-                            <field name="context_params" />
+                            <label for="date_from" string="Valid" />
+                            <div class="o_row">
+                                <field
+                                    name="date_from"
+                                    widget="daterange"
+                                    options="{'end_date_field': 'date_to'}"
+                                    placeholder="always"
+                                />
+                                <field name="date_to" invisible="1" />
+                            </div>
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                                placeholder="All companies"
+                            />
+                            <field name="context_params" groups="base.group_no_one" />
+                            <field
+                                name="user_id"
+                                groups="base.group_no_one"
+                                widget="many2one_avatar_user"
+                            />
                         </group>
                     </group>
                     <notebook>
                         <page name="content_page" string="Content">
+                            <div class="text-muted small mb-2" invisible="not model_id">
+                                Type <kbd>/</kbd> and choose <em
+                            >Dynamic Placeholder</em> to insert a value of the
+                                document, such as the customer name.
+                            </div>
                             <field
                                 name="content"
                                 nolabel="1"
                                 widget="html"
-                                options="{'style-inline': true, 'codeview': true}"
+                                options="{'style-inline': true, 'codeview': true, 'dynamic_placeholder': true, 'dynamic_placeholder_model_reference_field': 'model'}"
                             />
                         </page>
                         <page
-                            name="placeholder_generator"
-                            string="Dynamic placerholder generator"
+                            name="preview_page"
+                            string="Preview"
                             invisible="not model_id"
                         >
                             <group>
                                 <field
-                                    name="field_placeholder_generator"
-                                    widget="field_selector"
-                                    options="{'model': 'model'}"
+                                    name="preview_record"
+                                    options="{'hide_model': True, 'model_field': 'model_id', 'no_create': True}"
                                 />
                                 <field
-                                    name="field_placeholder_generator_name"
-                                    invisible="not field_placeholder_generator"
+                                    name="preview_status"
+                                    widget="badge"
+                                    decoration-success="preview_status == 'printed'"
+                                    decoration-warning="preview_status != 'printed'"
+                                    invisible="not preview_status"
                                 />
                             </group>
-                        </page>
-                        <page name="other_informations" string="Others informations">
-                            <group>
-                                <field
-                                    name="user_id"
-                                    widget="many2one_avatar"
-                                    invisible="1"
-                                />
-                                <field name="sequence" />
-                                <field
-                                    name="company_id"
-                                    groups="base.group_multi_company"
-                                />
-                            </group>
+                            <field
+                                name="preview_html"
+                                nolabel="1"
+                                readonly="1"
+                                invisible="not preview_record"
+                            />
                         </page>
                     </notebook>
                 </sheet>
@@ -96,31 +122,20 @@
         <field name="arch" type="xml">
             <list multi_edit="1">
                 <field name="model" column_invisible="True" />
-                <field name="active" column_invisible="True" />
                 <field name="sequence" widget="handle" />
                 <field name="name" />
+                <field name="model_id" optional="show" readonly="1" />
                 <field name="position" />
-                <field name="page_break_before" optional="show" />
-                <field name="page_break_after" optional="show" />
                 <field name="default" optional="show" />
-                <field name="model_id" readonly="1" optional="hide" />
+                <field name="has_condition" string="Condition" optional="show" />
+                <field name="date_from" optional="show" />
+                <field name="date_to" optional="show" />
+                <field name="page_break_before" optional="hide" />
+                <field name="page_break_after" optional="hide" />
                 <field
                     name="company_id"
                     groups="base.group_multi_company"
                     optional="hide"
-                />
-                <field
-                    name="filter_domain"
-                    widget="domain"
-                    options="{'model': 'model', 'in_dialog': False, 'foldable': True}"
-                    readonly="1"
-                    optional="hide"
-                />
-                <field
-                    name="user_id"
-                    widget="many2one_avatar"
-                    optional="show"
-                    column_invisible="1"
                 />
             </list>
         </field>
@@ -136,30 +151,48 @@
                 <field name="model_id" />
                 <separator />
                 <filter
+                    name="default"
+                    string="Automatic"
+                    domain="[('default', '=', True)]"
+                />
+                <filter
+                    name="with_condition"
+                    string="With a condition"
+                    domain="[('filter_domain', 'not in', (False, '', '[]'))]"
+                />
+                <separator />
+                <filter
+                    name="current"
+                    string="Valid today"
+                    domain="['&amp;',
+                        '|', ('date_from', '=', False), ('date_from', '&lt;=', context_today().strftime('%Y-%m-%d')),
+                        '|', ('date_to', '=', False), ('date_to', '&gt;=', context_today().strftime('%Y-%m-%d'))]"
+                />
+                <filter
+                    name="expired"
+                    string="Expired"
+                    domain="[('date_to', '&lt;', context_today().strftime('%Y-%m-%d'))]"
+                />
+                <separator />
+                <filter
                     name="before"
-                    string="Before the document"
+                    string="Top of document"
                     domain="[('position', '=', 'before')]"
                 />
                 <filter
                     name="before_line"
-                    string="Before Lines (if applicable)"
+                    string="Before lines"
                     domain="[('position', '=', 'before_line')]"
                 />
                 <filter
                     name="after_line"
-                    string="After Lines (if applicable)"
+                    string="After totals"
                     domain="[('position', '=', 'after_line')]"
                 />
                 <filter
                     name="after"
-                    string="After the document"
+                    string="Bottom of document"
                     domain="[('position', '=', 'after')]"
-                />
-                <separator />
-                <filter
-                    name="default"
-                    string="Default"
-                    domain="[('default', '=', True)]"
                 />
                 <separator />
                 <filter
@@ -169,16 +202,16 @@
                 />
                 <group>
                     <filter
-                        name="group_manager"
-                        string="Applies to"
-                        domain="[]"
-                        context="{'group_by':'model_id'}"
+                        name="group_model"
+                        string="Document type"
+                        context="{'group_by': 'model_id'}"
                     />
                 </group>
             </search>
         </field>
     </record>
 
+    <!-- Kept for the views of client modules written for the former UI. -->
     <record id="text_element_simplified_form_view" model="ir.ui.view">
         <field name="name">text.element.simplified.form</field>
         <field name="model">text.element</field>
@@ -187,7 +220,7 @@
         <field name="priority">999</field>
         <field name="arch" type="xml">
             <field name="model_id" position="attributes">
-                <attribute name="invisible">1</attribute>
+                <attribute name="readonly">1</attribute>
             </field>
         </field>
     </record>
@@ -202,22 +235,6 @@
             <field name="model_id" position="attributes">
                 <attribute name="column_invisible">1</attribute>
             </field>
-            <field name="user_id" position="after">
-                <button
-                    name="action_add_text_element_to_custom"
-                    title="Add text element to custom elements"
-                    icon="fa-plus"
-                    type="object"
-                    context="{'active_id': parent.id, 'active_model': parent._name}"
-                />
-                <button
-                    name="action_remove"
-                    title="Remove text element"
-                    icon="fa-trash"
-                    type="object"
-                    context="{'active_id': parent.id, 'active_model': parent._name}"
-                />
-            </field>
         </field>
     </record>
 
@@ -225,6 +242,15 @@
         <field name="name">Text Elements</field>
         <field name="res_model">text.element</field>
         <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_group_model': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Write a first text element</p>
+            <p>
+                A text element is a paragraph printed on documents: a legal notice,
+                an annual closure, a clause. Choose where it goes, when it applies,
+                and whether it is added automatically.
+            </p>
+        </field>
     </record>
 
     <menuitem
@@ -232,5 +258,6 @@
         action="text_element_action"
         name="Text Elements"
         parent="text_element_base.text_element_menu_category"
+        sequence="10"
     />
 </odoo>

@@ -7,34 +7,20 @@
         <field name="arch" type="xml">
             <notebook position="inside">
                 <page name="text_element_page" string="Text Elements">
-                    <button
-                        string="Add Existing Text Element"
-                        name="action_add_element_wizard"
-                        type="object"
-                        class="btn-primary"
-                    />
-                    <button
-                        string="Reload default text elements"
-                        name="action_reload_default_text_elements"
-                        type="object"
-                        class="btn-primary ms-1"
-                    />
-                    <separator string="Text Elements" />
-                    <field
-                        name="text_element_ids"
-                        nolabel="1"
-                        options="{'no_create_edit': True, 'no_create': True, 'no_edit': True}"
-                        context="{'default_res_id': id, 'default_res_model': 'account.move', 'form_view_ref': 'text_element_base.text_element_simplified_form_view', 'list_view_ref': 'text_element_base.text_element_simplified_list_view'}"
-                        readonly="1"
-                        force_save="1"
-                    />
-                    <separator string="Custom Text Elements" />
+                    <div class="d-flex gap-1 mb-2">
+                        <widget name="text_element_add_from_catalogue" />
+                        <button
+                            string="Reapply default text elements"
+                            name="action_reapply_default_text_elements"
+                            type="object"
+                            class="btn-secondary"
+                            help="Add the automatic texts this document lacks and remove the automatic ones that no longer apply. Texts added by hand or personalised are kept."
+                        />
+                    </div>
                     <field
                         name="text_element_custom_ids"
                         nolabel="1"
-                        options="{'no_create': True, 'no_create_edit': True, 'no_edit': True}"
-                        context="{'default_res_id': id, 'default_res_model': 'account.move', 'form_view_ref': 'text_element_base.text_element_custom_simplified_form_view', 'list_view_ref': 'text_element_base.text_element_custom_simplified_list_view'}"
-                        force_save="1"
+                        context="{'list_view_ref': 'text_element_base.text_element_custom_document_list_view', 'form_view_ref': 'text_element_base.text_element_custom_document_form_view'}"
                     />
                 </page>
             </notebook>

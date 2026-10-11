@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+    <record id="group_text_element_manager" model="res.groups">
+        <field name="name">Text Elements Manager</field>
+        <field
+            name="comment"
+        >Creates and edits the catalogue of texts printed on documents.</field>
+    </record>
+    <record id="base.group_system" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_text_element_manager'))]" />
+    </record>
+
     <!-- Multi-company rules -->
     <record id="text_element_rule_company" model="ir.rule">
         <field name="name">Text Element - Multi-Company</field>
