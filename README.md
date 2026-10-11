@@ -14,9 +14,11 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[text_element_accounting](text_element_accounting/) | 19.0.1.0.0 |  | Text Elements - Accounting module
-[text_element_base](text_element_base/) | 19.0.1.0.0 |  | Text Elements - Base module
-[text_element_sale](text_element_sale/) | 19.0.1.0.0 |  | Text Elements - Sale module
+[text_element_accounting](text_element_accounting/) | 19.0.2.0.0 |  | Text Elements - Accounting module
+[text_element_base](text_element_base/) | 19.0.2.0.0 |  | Text Elements - Base module
+[text_element_purchase](text_element_purchase/) | 19.0.1.0.0 |  | Print text elements on purchase documents
+[text_element_sale](text_element_sale/) | 19.0.2.0.0 |  | Text Elements - Sale module
+[text_element_stock](text_element_stock/) | 19.0.1.0.0 |  | Print text elements on stock documents
 
 [//]: # (end addons)
 
