@@ -3,14 +3,14 @@
 # * text_element_base
 #
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2025, 2026.
+# Jérémy Didderen <jeremy.didderen@noviat.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-31 23:20+0000\n"
-"PO-Revision-Date: 2026-10-11 10:20+0000\n"
-"Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
-"memory@weblate.org>\n"
+"PO-Revision-Date: 2026-10-11 21:21+0000\n"
+"Last-Translator: Jérémy Didderen <jeremy.didderen@noviat.com>\n"
 "Language-Team: Dutch <https://translation.noviat.io/projects/noviat-generic-"
 "odoo-text-elements-v19/text_element_base/nl/>\n"
 "Language: nl\n"
@@ -24,28 +24,28 @@ msgstr ""
 #. odoo-python
 #: code:addons/text_element_base/models/text_element_abstract.py:0
 msgid "%(added)s text(s) added, %(removed)s removed."
-msgstr ""
+msgstr "%(added)s tekst(en) toegevoegd, %(removed)s verwijderd."
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_document_form_view
 msgid ": the conditions of the catalogue text still apply."
-msgstr ""
+msgstr ": de voorwaarden van de catalogustekst blijven van toepassing."
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "<span>after</span>"
-msgstr ""
+msgstr "<span>na</span>"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "<span>before</span>"
-msgstr ""
+msgstr "<span>voor</span>"
 
 #. module: text_element_base
 #. odoo-python
 #: code:addons/text_element_base/models/text_element_custom.py:0
 msgid "A document text must be linked to a document."
-msgstr ""
+msgstr "Een documenttekst moet aan een document gekoppeld zijn."
 
 #. module: text_element_base
 #: model_terms:ir.actions.act_window,help:text_element_base.text_element_action
@@ -55,6 +55,11 @@ msgid ""
 "applies,\n"
 "                and whether it is added automatically."
 msgstr ""
+"Een tekstelement is een paragraaf die op documenten wordt afgedrukt: een "
+"wettelijke vermelding,\n"
+"                een jaarafsluiting, een clausule. Kies waar het komt, "
+"wanneer het van toepassing is\n"
+"                en of het automatisch wordt toegevoegd."
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__active
@@ -64,29 +69,29 @@ msgstr "Actief"
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__default
 msgid "Add automatically to new documents"
-msgstr ""
+msgstr "Automatisch toevoegen aan nieuwe documenten"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_document_list_view
 msgid "Add free text"
-msgstr ""
+msgstr "Vrije tekst toevoegen"
 
 #. module: text_element_base
 #. odoo-javascript
 #: code:addons/text_element_base/static/src/add_from_catalogue/add_from_catalogue.esm.js:0
 #: code:addons/text_element_base/static/src/add_from_catalogue/add_from_catalogue.xml:0
 msgid "Add from catalogue"
-msgstr ""
+msgstr "Toevoegen uit catalogus"
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__origin__auto
 msgid "Added automatically"
-msgstr ""
+msgstr "Automatisch toegevoegd"
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__origin__manual
 msgid "Added manually"
-msgstr ""
+msgstr "Handmatig toegevoegd"
 
 #. module: text_element_base
 #: model:ir.model.fields,help:text_element_base.field_text_element__default
@@ -94,13 +99,16 @@ msgid ""
 "Added to every new document of this type. Users can still remove it from a "
 "document, or add a text that is not automatic."
 msgstr ""
+"Toegevoegd aan elk nieuw document van dit type. Gebruikers kunnen het nog "
+"steeds uit een document verwijderen, of een tekst toevoegen die niet "
+"automatisch is."
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__after_line
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__after_line
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "After totals"
-msgstr ""
+msgstr "Na de totalen"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
@@ -110,7 +118,7 @@ msgstr "Alle bedrijven"
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "All documents"
-msgstr ""
+msgstr "Alle documenten"
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__preview_status__archived
@@ -134,14 +142,14 @@ msgstr "Gebaseerd op"
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__before_line
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Before lines"
-msgstr ""
+msgstr "Vóór de regels"
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__after
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__after
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Bottom of document"
-msgstr ""
+msgstr "Onderaan het document"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_ir_model__can_be_used_with_text_elements
@@ -151,28 +159,28 @@ msgstr "Kan worden gebruikt met tekstelementen"
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__kind__catalogue
 msgid "Catalogue"
-msgstr ""
+msgstr "Catalogus"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_abstract__text_element_ids
 msgid "Catalogue Text Elements"
-msgstr ""
+msgstr "Tekstelementen uit catalogus"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__catalogue_content
 msgid "Catalogue content"
-msgstr ""
+msgstr "Catalogusinhoud"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__text_element_id
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_search_view
 msgid "Catalogue text"
-msgstr ""
+msgstr "Catalogustekst"
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__print_status__archived
 msgid "Catalogue text archived"
-msgstr ""
+msgstr "Catalogustekst gearchiveerd"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__company_id
@@ -190,7 +198,7 @@ msgstr "Conditie"
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__preview_status__condition_not_met
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__print_status__condition_not_met
 msgid "Condition not met"
-msgstr ""
+msgstr "Niet aan conditie voldaan"
 
 #. module: text_element_base
 #: model:ir.ui.menu,name:text_element_base.text_element_menu_category
@@ -210,11 +218,13 @@ msgid ""
 "Context keys separated with a semicolon, prefixed with an exclamation mark "
 "to negate them (e.g. proforma;!from_portal)."
 msgstr ""
+"Contextsleutels gescheiden door een puntkomma, voorafgegaan door een "
+"uitroepteken om ze om te keren (bv. proforma;!from_portal)."
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_document_list_view
 msgid "Copy this text to the document to adapt it"
-msgstr ""
+msgstr "Deze tekst naar het document kopiëren om hem aan te passen"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__create_uid
@@ -232,6 +242,7 @@ msgstr "Gemaakt op"
 #: model:res.groups,comment:text_element_base.group_text_element_manager
 msgid "Creates and edits the catalogue of texts printed on documents."
 msgstr ""
+"Maakt en bewerkt de catalogus van teksten die op documenten worden afgedrukt."
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_ir_model__display_name
@@ -255,7 +266,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:text_element_base.text_element_custom_action
 #: model:ir.ui.menu,name:text_element_base.text_element_custom_menu
 msgid "Document Texts"
-msgstr ""
+msgstr "Documentteksten"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__model_id
@@ -268,7 +279,7 @@ msgstr "Document type"
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_document_list_view
 msgid "Drop the adaptation and follow the catalogue again"
-msgstr ""
+msgstr "De aanpassing laten vallen en opnieuw de catalogus volgen"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
@@ -283,12 +294,12 @@ msgstr "Vrije tekst"
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_search_view
 msgid "Free texts"
-msgstr ""
+msgstr "Vrije teksten"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__has_condition
 msgid "Has Condition"
-msgstr ""
+msgstr "Heeft voorwaarde"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_ir_model__id
@@ -313,7 +324,7 @@ msgstr "Laatst bijgewerkt op"
 #. module: text_element_base
 #: model:ir.model.fields,help:text_element_base.field_text_element__model_id
 msgid "Leave empty to make the text available on every document type."
-msgstr ""
+msgstr "Laat leeg om de tekst beschikbaar te maken voor elk documenttype."
 
 #. module: text_element_base
 #: model:ir.model,name:text_element_base.model_ir_model
@@ -330,12 +341,12 @@ msgstr "Naam"
 #. module: text_element_base
 #: model:ir.model.fields,help:text_element_base.field_text_element__user_id
 msgid "Only added automatically on the documents of this user."
-msgstr ""
+msgstr "Alleen automatisch toegevoegd aan de documenten van deze gebruiker."
 
 #. module: text_element_base
 #: model:ir.model.fields,help:text_element_base.field_text_element__sequence
 msgid "Order of the texts sharing the same position."
-msgstr ""
+msgstr "Volgorde van de teksten met dezelfde positie."
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__origin
@@ -346,7 +357,7 @@ msgstr "Bron"
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__preview_status__out_of_period
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__print_status__out_of_period
 msgid "Out of validity period"
-msgstr ""
+msgstr "Buiten geldigheidsperiode"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__page_break_after
@@ -363,20 +374,20 @@ msgstr "Pagina-einde voor"
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "Page break"
-msgstr ""
+msgstr "Pagina-einde"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_document_form_view
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_document_list_view
 msgid "Personalise"
-msgstr ""
+msgstr "Personaliseren"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__is_personalized
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__kind__personalized
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_search_view
 msgid "Personalised"
-msgstr ""
+msgstr "Gepersonaliseerd"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__position
@@ -388,7 +399,7 @@ msgstr "Positie"
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__position_sequence
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__position_sequence
 msgid "Position Sequence"
-msgstr ""
+msgstr "Positievolgorde"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
@@ -398,27 +409,27 @@ msgstr "Voorbeeld"
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__preview_html
 msgid "Preview Html"
-msgstr ""
+msgstr "HTML-voorbeeld"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__preview_status
 msgid "Preview Status"
-msgstr ""
+msgstr "Voorbeeldstatus"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element_custom__print_status
 msgid "Print Status"
-msgstr ""
+msgstr "Afdrukstatus"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__context_params
 msgid "Print context"
-msgstr ""
+msgstr "Afdrukcontext"
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__preview_status__context_mismatch
 msgid "Print context not met"
-msgstr ""
+msgstr "Niet aan afdrukcontext voldaan"
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__print_status__printed
@@ -443,7 +454,7 @@ msgstr "Terugdraaien"
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__preview_record
 msgid "Sample document"
-msgstr ""
+msgstr "Voorbeelddocument"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__sequence
@@ -459,12 +470,12 @@ msgstr "Bron"
 #. module: text_element_base
 #: model:ir.model.fields,help:text_element_base.field_text_element__page_break_after
 msgid "Start a new page after the text."
-msgstr ""
+msgstr "Een nieuwe pagina beginnen na de tekst."
 
 #. module: text_element_base
 #: model:ir.model.fields,help:text_element_base.field_text_element__page_break_before
 msgid "Start the text on a new page."
-msgstr ""
+msgstr "De tekst op een nieuwe pagina beginnen."
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_document_list_view
@@ -489,7 +500,7 @@ msgstr "Tekstelementen"
 #. module: text_element_base
 #: model:res.groups,name:text_element_base.group_text_element_manager
 msgid "Text Elements Manager"
-msgstr ""
+msgstr "Beheerder tekstelementen"
 
 #. module: text_element_base
 #: model:ir.model,name:text_element_base.model_text_element
@@ -504,12 +515,12 @@ msgstr ""
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_document_list_view
 msgid "The adapted text of this document will be lost."
-msgstr ""
+msgstr "De aangepaste tekst van dit document gaat verloren."
 
 #. module: text_element_base
 #: model:ir.model.fields,help:text_element_base.field_ir_model__can_be_used_with_text_elements
 msgid "The model inherits text.element.abstract."
-msgstr ""
+msgstr "Het model erft van text.element.abstract."
 
 #. module: text_element_base
 #: model:ir.model.fields,help:text_element_base.field_text_element__filter_domain
@@ -517,17 +528,20 @@ msgid ""
 "The text is printed only when the document matches this condition, evaluated "
 "when the document is printed."
 msgstr ""
+"De tekst wordt alleen afgedrukt wanneer het document aan deze conditie "
+"voldoet, geëvalueerd bij het afdrukken van het document."
 
 #. module: text_element_base
 #: model:ir.model.constraint,message:text_element_base.constraint_text_element_date_range
 msgid "The validity start date must be before its end date."
-msgstr ""
+msgstr "De begindatum van de geldigheid moet vóór de einddatum liggen."
 
 #. module: text_element_base
 #. odoo-python
 #: code:addons/text_element_base/models/text_element.py:0
 msgid "These placeholders do not match a field of %(model)s: %(paths)s"
 msgstr ""
+"Deze plaatshouders komen niet overeen met een veld van %(model)s: %(paths)s"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_custom_document_form_view
@@ -535,13 +549,15 @@ msgid ""
 "This text follows the catalogue. Personalise it to adapt it for this\n"
 "                    document only."
 msgstr ""
+"Deze tekst volgt de catalogus. Personaliseer hem om hem enkel voor dit\n"
+"                    document aan te passen."
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__position__before
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element_custom__position__before
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Top of document"
-msgstr ""
+msgstr "Bovenaan het document"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
@@ -550,6 +566,10 @@ msgid ""
 "of the\n"
 "                                document, such as the customer name."
 msgstr ""
+"Typ <kbd>/</kbd> en kies <em>Dynamische placeholder</em> om een waarde van "
+"het\n"
+"                                document in te voegen, zoals de naam van de "
+"klant."
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__user_id
@@ -569,7 +589,7 @@ msgstr "Geldig vanaf"
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "Valid today"
-msgstr ""
+msgstr "Vandaag geldig"
 
 #. module: text_element_base
 #: model:ir.model.fields,field_description:text_element_base.field_text_element__date_to
@@ -589,27 +609,27 @@ msgstr "Waar"
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_search_view
 msgid "With a condition"
-msgstr ""
+msgstr "Met een conditie"
 
 #. module: text_element_base
 #: model:ir.model.fields.selection,name:text_element_base.selection__text_element__preview_status__printed
 msgid "Would be printed"
-msgstr ""
+msgstr "Zou worden afgedrukt"
 
 #. module: text_element_base
 #: model_terms:ir.actions.act_window,help:text_element_base.text_element_action
 msgid "Write a first text element"
-msgstr ""
+msgstr "Schrijf een eerste tekstelement"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "always"
-msgstr ""
+msgstr "altijd"
 
 #. module: text_element_base
 #: model_terms:ir.ui.view,arch_db:text_element_base.text_element_form_view
 msgid "e.g. Annual closure notice"
-msgstr ""
+msgstr "bv. Melding jaarlijkse sluiting"
 
 #~ msgid ""
 #~ "A custom text element must be linked to a model (field 'Applies to')."

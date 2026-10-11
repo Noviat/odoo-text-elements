@@ -4,22 +4,22 @@
 #
 # Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2025.
 # admin <support@noviat.com>, 2025.
-# Jérémy Didderen <jeremy.didderen@noviat.com>, 2025.
+# Jérémy Didderen <jeremy.didderen@noviat.com>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 20:41+0000\n"
-"PO-Revision-Date: 2025-12-11 18:29+0000\n"
+"PO-Revision-Date: 2026-10-11 21:21+0000\n"
 "Last-Translator: Jérémy Didderen <jeremy.didderen@noviat.com>\n"
-"Language-Team: French <https://translation.noviat.com/projects/noviat-"
-"generic-odoo-text-elements-v19/text_element_accounting/fr/>\n"
+"Language-Team: French <https://translation.noviat.io/projects/noviat-generic-"
+"odoo-text-elements-v19/text_element_accounting/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.13.3\n"
+"X-Generator: Weblate 2026.9.1\n"
 
 #. module: text_element_accounting
 #: model_terms:ir.ui.view,arch_db:text_element_accounting.view_move_form
@@ -27,11 +27,14 @@ msgid ""
 "Add the automatic texts this document lacks and remove the automatic ones "
 "that no longer apply. Texts added by hand or personalised are kept."
 msgstr ""
+"Ajoute les textes automatiques manquants sur ce document et retire les "
+"textes automatiques qui ne s'appliquent plus. Les textes ajoutés "
+"manuellement ou personnalisés sont conservés."
 
 #. module: text_element_accounting
 #: model:ir.model.fields,field_description:text_element_accounting.field_account_move__text_element_ids
 msgid "Catalogue Text Elements"
-msgstr ""
+msgstr "Éléments de texte du catalogue"
 
 #. module: text_element_accounting
 #: model:ir.model.fields,field_description:text_element_accounting.field_account_move__display_name
@@ -51,7 +54,7 @@ msgstr "Pièce comptable"
 #. module: text_element_accounting
 #: model_terms:ir.ui.view,arch_db:text_element_accounting.view_move_form
 msgid "Reapply default text elements"
-msgstr ""
+msgstr "Réappliquer les éléments de texte par défaut"
 
 #. module: text_element_accounting
 #: model:ir.model.fields,field_description:text_element_accounting.field_account_move__text_element_custom_ids
