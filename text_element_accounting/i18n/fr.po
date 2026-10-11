@@ -23,15 +23,15 @@ msgstr ""
 
 #. module: text_element_accounting
 #: model_terms:ir.ui.view,arch_db:text_element_accounting.view_move_form
-msgid "Add Existing Text Element"
-msgstr "Ajouter un élément de texte existant"
+msgid ""
+"Add the automatic texts this document lacks and remove the automatic ones "
+"that no longer apply. Texts added by hand or personalised are kept."
+msgstr ""
 
 #. module: text_element_accounting
-#: model:ir.model.fields,field_description:text_element_accounting.field_account_bank_statement_line__text_element_custom_ids
-#: model:ir.model.fields,field_description:text_element_accounting.field_account_move__text_element_custom_ids
-#: model_terms:ir.ui.view,arch_db:text_element_accounting.view_move_form
-msgid "Custom Text Elements"
-msgstr "Éléments de texte personnalisés"
+#: model:ir.model.fields,field_description:text_element_accounting.field_account_move__text_element_ids
+msgid "Catalogue Text Elements"
+msgstr ""
 
 #. module: text_element_accounting
 #: model:ir.model.fields,field_description:text_element_accounting.field_account_move__display_name
@@ -50,12 +50,20 @@ msgstr "Pièce comptable"
 
 #. module: text_element_accounting
 #: model_terms:ir.ui.view,arch_db:text_element_accounting.view_move_form
-msgid "Reload default text elements"
-msgstr "Recharger les éléments de texte par défaut"
+msgid "Reapply default text elements"
+msgstr ""
 
 #. module: text_element_accounting
-#: model:ir.model.fields,field_description:text_element_accounting.field_account_bank_statement_line__text_element_ids
-#: model:ir.model.fields,field_description:text_element_accounting.field_account_move__text_element_ids
+#: model:ir.model.fields,field_description:text_element_accounting.field_account_move__text_element_custom_ids
 #: model_terms:ir.ui.view,arch_db:text_element_accounting.view_move_form
 msgid "Text Elements"
 msgstr "Éléments de texte"
+
+#~ msgid "Add Existing Text Element"
+#~ msgstr "Ajouter un élément de texte existant"
+
+#~ msgid "Custom Text Elements"
+#~ msgstr "Éléments de texte personnalisés"
+
+#~ msgid "Reload default text elements"
+#~ msgstr "Recharger les éléments de texte par défaut"
