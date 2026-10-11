@@ -47,4 +47,4 @@ Maintainer
 ----------
 
 This module is maintained by `Noviat <https://www.noviat.com/>`_.
-`Contact us <https://www.noviat.com/contact>`_.
+Contact us: https://www.noviat.com/contact
