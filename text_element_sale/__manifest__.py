@@ -1,9 +1,9 @@
-# Copyright 2009-2023 Noviat
+# Copyright 2009 Noviat
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 {
     "name": "Text Elements - Sale module",
-    "version": "19.0.1.0.0",
+    "version": "19.0.2.0.0",
     "license": "AGPL-3",
     "author": "Noviat, Elneo",
     "website": "https://www.noviat.com/",
@@ -14,5 +14,4 @@
         "views/sale_order_report.xml",
         "views/sale_order_views.xml",
     ],
-    "post_init_hook": "_enable_text_element_on_sale",
 }

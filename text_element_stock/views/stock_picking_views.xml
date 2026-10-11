@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_picking_form" model="ir.ui.view">
+        <field name="name">stock.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='note']" position="after">
+                <page name="text_element_page" string="Text Elements">
+                    <div class="d-flex gap-1 mb-2">
+                        <widget name="text_element_add_from_catalogue" />
+                        <button
+                            string="Reapply default text elements"
+                            name="action_reapply_default_text_elements"
+                            type="object"
+                            class="btn-secondary"
+                            help="Add the automatic texts this document lacks and remove the automatic ones that no longer apply. Texts added by hand or personalised are kept."
+                        />
+                    </div>
+                    <field
+                        name="text_element_custom_ids"
+                        nolabel="1"
+                        context="{'list_view_ref': 'text_element_base.text_element_custom_document_list_view', 'form_view_ref': 'text_element_base.text_element_custom_document_form_view'}"
+                    />
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
