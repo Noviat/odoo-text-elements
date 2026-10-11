@@ -127,7 +127,7 @@
                 <field name="model_id" optional="show" readonly="1" />
                 <field name="position" />
                 <field name="default" optional="show" />
-                <field name="has_condition" optional="show" />
+                <field name="has_condition" string="Condition" optional="show" />
                 <field name="date_from" optional="show" />
                 <field name="date_to" optional="show" />
                 <field name="page_break_before" optional="hide" />

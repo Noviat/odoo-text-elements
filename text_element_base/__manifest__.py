@@ -2,13 +2,13 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 {
-    "name": "Text Elements - Base module",
-    "version": "18.0.3.0.0",
+    "name": "Text Elements",
+    "version": "18.0.3.0.1",
     "license": "AGPL-3",
     "author": "Noviat, Elneo",
     "website": "https://www.noviat.com/",
     "category": "Tools",
-    "summary": "Text Elements - Base module",
+    "summary": "Notices, clauses and messages on PDF documents, no developer needed",
     "depends": ["base", "web", "mail", "html_editor"],
     "data": [
         "security/text_element_security.xml",
@@ -24,5 +24,6 @@
             "text_element_base/static/src/**/*",
         ],
     },
+    "images": ["static/description/banner.png"],
     "installable": True,
 }
