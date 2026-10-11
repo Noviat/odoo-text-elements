@@ -26,11 +26,14 @@ msgid ""
 "Add the automatic texts this document lacks and remove the automatic ones "
 "that no longer apply. Texts added by hand or personalised are kept."
 msgstr ""
+"Ajoute les textes automatiques manquants sur ce document et retire les "
+"textes automatiques qui ne s'appliquent plus. Les textes ajoutés "
+"manuellement ou personnalisés sont conservés."
 
 #. module: text_element_accounting
 #: model:ir.model.fields,field_description:text_element_accounting.field_account_move__text_element_ids
 msgid "Catalogue Text Elements"
-msgstr ""
+msgstr "Éléments de texte du catalogue"
 
 #. module: text_element_accounting
 #: model:ir.model,name:text_element_accounting.model_account_move
@@ -40,7 +43,7 @@ msgstr "Pièce comptable"
 #. module: text_element_accounting
 #: model_terms:ir.ui.view,arch_db:text_element_accounting.view_move_form
 msgid "Reapply default text elements"
-msgstr ""
+msgstr "Réappliquer les éléments de texte par défaut"
 
 #. module: text_element_accounting
 #: model:ir.model.fields,field_description:text_element_accounting.field_account_move__text_element_custom_ids
