@@ -86,7 +86,7 @@ class TextElement(models.Model):
         help="The text is printed only when the document matches this condition, "
         "evaluated when the document is printed.",
     )
-    has_condition = fields.Boolean(string="Condition", compute="_compute_has_condition")
+    has_condition = fields.Boolean(compute="_compute_has_condition")
     date_from = fields.Date(string="Valid from")
     date_to = fields.Date(string="Valid until")
     context_params = fields.Char(
