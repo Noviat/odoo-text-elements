@@ -1,28 +1,131 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="text_element_custom_form_view" model="ir.ui.view">
-        <field name="name">text.element.custom.form</field>
+    <!-- The list and form shown in the Text Elements tab of a document. -->
+    <record id="text_element_custom_document_list_view" model="ir.ui.view">
+        <field name="name">text.element.custom.document.list</field>
         <field name="model">text.element.custom</field>
-        <field name="inherit_id" ref="text_element_base.text_element_form_view" />
-        <field name="mode">primary</field>
+        <field name="priority">999</field>
         <field name="arch" type="xml">
-            <field name="model_id" position="attributes">
-                <attribute name="readonly">1</attribute>
-            </field>
-            <field name="model_id" position="after">
-                <field name="res_id" readonly="1" />
-            </field>
+            <list>
+                <control>
+                    <create string="Add free text" />
+                </control>
+                <field name="sequence" widget="handle" />
+                <field name="text_element_id" column_invisible="1" />
+                <field name="is_personalized" column_invisible="1" />
+                <field name="display_name" string="Text" />
+                <field name="position" />
+                <field
+                    name="kind"
+                    widget="badge"
+                    decoration-muted="kind == 'catalogue'"
+                    decoration-info="kind == 'personalized'"
+                    decoration-success="kind == 'free'"
+                />
+                <field
+                    name="print_status"
+                    string="Status"
+                    widget="badge"
+                    decoration-warning="print_status != 'printed'"
+                    invisible="print_status == 'printed'"
+                />
+                <button
+                    name="action_personalize"
+                    type="object"
+                    string="Personalise"
+                    icon="fa-pencil"
+                    title="Copy this text to the document to adapt it"
+                    invisible="kind != 'catalogue'"
+                />
+                <button
+                    name="action_revert_to_catalogue"
+                    type="object"
+                    string="Revert"
+                    icon="fa-undo"
+                    title="Drop the adaptation and follow the catalogue again"
+                    invisible="kind != 'personalized'"
+                    confirm="The adapted text of this document will be lost."
+                />
+            </list>
         </field>
     </record>
 
-    <record id="text_element_custom_list_view" model="ir.ui.view">
-        <field name="name">text.element.custom.list</field>
+    <record id="text_element_custom_document_form_view" model="ir.ui.view">
+        <field name="name">text.element.custom.document.form</field>
         <field name="model">text.element.custom</field>
-        <field name="inherit_id" ref="text_element_base.text_element_list_view" />
-        <field name="mode">primary</field>
+        <field name="priority">999</field>
         <field name="arch" type="xml">
-            <field name="model_id" position="after">
-                <field name="res_id" />
+            <form>
+                <field name="kind" invisible="1" />
+                <field name="text_element_id" invisible="1" />
+                <div
+                    class="alert alert-info"
+                    role="status"
+                    invisible="kind != 'personalized'"
+                >
+                    Based on <field
+                    name="text_element_id"
+                    readonly="1"
+                    class="fw-bold"
+                />: the conditions of the catalogue text still apply.
+                </div>
+                <div
+                    class="alert alert-secondary"
+                    role="status"
+                    invisible="kind != 'catalogue'"
+                >
+                    This text follows the catalogue. Personalise it to adapt it for this
+                    document only.
+                    <button
+                    name="action_personalize"
+                    type="object"
+                    string="Personalise"
+                    class="btn btn-link p-0 ms-1 align-baseline"
+                />
+                </div>
+                <group>
+                    <group>
+                        <field name="name" readonly="kind == 'catalogue'" />
+                        <field name="position" readonly="kind == 'catalogue'" />
+                    </group>
+                    <group>
+                        <field
+                            name="page_break_before"
+                            readonly="kind == 'catalogue'"
+                        />
+                        <field name="page_break_after" readonly="kind == 'catalogue'" />
+                    </group>
+                </group>
+                <field
+                    name="catalogue_content"
+                    nolabel="1"
+                    readonly="1"
+                    invisible="kind != 'catalogue'"
+                />
+                <field
+                    name="content"
+                    nolabel="1"
+                    widget="html"
+                    options="{'style-inline': true}"
+                    invisible="kind == 'catalogue'"
+                />
+            </form>
+        </field>
+    </record>
+
+    <!-- Kept for the views of client modules written for the former UI. -->
+    <record id="text_element_custom_simplified_list_view" model="ir.ui.view">
+        <field name="name">text.element.custom.simplified.list</field>
+        <field name="model">text.element.custom</field>
+        <field
+            name="inherit_id"
+            ref="text_element_base.text_element_custom_document_list_view"
+        />
+        <field name="mode">primary</field>
+        <field name="priority">999</field>
+        <field name="arch" type="xml">
+            <field name="display_name" position="attributes">
+                <attribute name="string">Text</attribute>
             </field>
         </field>
     </record>
@@ -32,49 +135,94 @@
         <field name="model">text.element.custom</field>
         <field
             name="inherit_id"
-            ref="text_element_base.text_element_custom_form_view"
+            ref="text_element_base.text_element_custom_document_form_view"
         />
         <field name="mode">primary</field>
         <field name="priority">999</field>
         <field name="arch" type="xml">
-            <field name="model_id" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </field>
-            <field name="res_id" position="attributes">
-                <attribute name="invisible">1</attribute>
+            <field name="name" position="attributes">
+                <attribute name="placeholder">Name</attribute>
             </field>
         </field>
     </record>
 
-    <record id="text_element_custom_simplified_list_view" model="ir.ui.view">
-        <field name="name">text.element.custom.simplified.list</field>
+    <!-- Technical views of all document lines (developer mode). -->
+    <record id="text_element_custom_list_view" model="ir.ui.view">
+        <field name="name">text.element.custom.list</field>
         <field name="model">text.element.custom</field>
-        <field
-            name="inherit_id"
-            ref="text_element_base.text_element_custom_list_view"
-        />
+        <!-- Was an extension of the catalogue list before 18.0.3.0.0. -->
+        <field name="inherit_id" eval="False" />
         <field name="mode">primary</field>
-        <field name="priority">999</field>
         <field name="arch" type="xml">
-            <field name="model_id" position="attributes">
-                <attribute name="column_invisible">1</attribute>
-            </field>
-            <field name="res_id" position="attributes">
-                <attribute name="column_invisible">1</attribute>
-            </field>
+            <list create="0">
+                <field name="model_id" />
+                <field name="res_id" />
+                <field name="display_name" string="Text" />
+                <field name="position" />
+                <field name="kind" />
+                <field name="origin" optional="hide" />
+                <field
+                    name="company_id"
+                    groups="base.group_multi_company"
+                    optional="hide"
+                />
+            </list>
+        </field>
+    </record>
+
+    <record id="text_element_custom_search_view" model="ir.ui.view">
+        <field name="name">text.element.custom.search</field>
+        <field name="model">text.element.custom</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="content" />
+                <field name="text_element_id" />
+                <field name="model_id" />
+                <filter
+                    name="personalized"
+                    string="Personalised"
+                    domain="[('is_personalized', '=', True)]"
+                />
+                <filter
+                    name="free"
+                    string="Free texts"
+                    domain="[('text_element_id', '=', False)]"
+                />
+                <group>
+                    <filter
+                        name="group_model"
+                        string="Document type"
+                        context="{'group_by': 'model_id'}"
+                    />
+                    <filter
+                        name="group_element"
+                        string="Catalogue text"
+                        context="{'group_by': 'text_element_id'}"
+                    />
+                </group>
+            </search>
         </field>
     </record>
 
     <record id="text_element_custom_action" model="ir.actions.act_window">
-        <field name="name">Custom Text Elements</field>
+        <field name="name">Document Texts</field>
         <field name="res_model">text.element.custom</field>
         <field name="view_mode">list,form</field>
+        <field
+            name="view_ids"
+            eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('text_element_custom_list_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('text_element_custom_document_form_view')})]"
+        />
     </record>
 
     <menuitem
         id="text_element_custom_menu"
         action="text_element_custom_action"
-        name="Custom Text Elements"
+        name="Document Texts"
         parent="text_element_base.text_element_menu_category"
+        groups="base.group_no_one"
+        sequence="20"
     />
 </odoo>
