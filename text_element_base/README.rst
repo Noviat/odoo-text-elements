@@ -155,4 +155,4 @@ Maintainer
 
 This module is maintained by `Noviat <https://www.noviat.com/>`_, Odoo
 integrator in Belgium. Questions, or a connector for another document?
-`Contact us <https://www.noviat.com/contact>`_.
+Contact us: https://www.noviat.com/contact
