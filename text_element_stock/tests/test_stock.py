@@ -56,7 +56,7 @@ class TestStock(TransactionCase):
                         {
                             "product_id": self.product.id,
                             "product_uom_qty": 1,
-                            "product_uom": self.product.uom_id.id,
+                            "uom_id": self.product.uom_id.id,
                         },
                     )
                 ],

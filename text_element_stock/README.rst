@@ -12,7 +12,7 @@ This module adds the **Text Elements** tab to the form and prints the texts at t
 position chosen in the catalogue: top of document, before lines, after totals or
 bottom of document, in the customer's language.
 
-.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/19.0/text_element_stock/static/description/delivery_slip_report.png
+.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/20.0/text_element_stock/static/description/delivery_slip_report.png
    :alt: A delivery slip with handling instructions before the moves
 
 Requirements
