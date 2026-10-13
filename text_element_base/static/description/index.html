@@ -1,0 +1,156 @@
+<!-- Generated from README.rst: edit the README, not this file. -->
+<div class="section" id="text-elements">
+<h1>Text Elements</h1>
+<p>Legal notices, clauses and messages on your PDF documents, written once and
+printed in the right place, without a developer.</p>
+<p>Every company has sentences that belong on its documents: a year-end closure
+notice, a legal mention for one subsidiary, a deposit clause above a certain
+amount, a reminder that a pro forma is not an invoice. With Text Elements, the
+people who know what a document must say write those texts in Odoo's editor and
+decide where, on which documents and when they are printed.</p>
+<p>This module holds the catalogue and the engine. Install the connectors for the
+documents you need:</p>
+<ul class="simple">
+<li><strong>Text Elements - Sale</strong>: quotations and sales orders</li>
+<li><strong>Text Elements - Accounting</strong>: invoices and credit notes</li>
+<li><strong>Text Elements - Purchase</strong>: requests for quotation and purchase orders</li>
+<li><strong>Text Elements - Stock</strong>: delivery slips</li>
+</ul>
+<img alt="A sales order with texts before the lines, after the totals and at the bottom" src="sale_order_report.png" />
+<p><strong>Table of contents</strong></p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#features" id="toc-entry-1">Features</a></li>
+<li><a class="reference internal" href="#configuration" id="toc-entry-2">Configuration</a></li>
+<li><a class="reference internal" href="#usage" id="toc-entry-3">Usage</a></li>
+<li><a class="reference internal" href="#connecting-another-document" id="toc-entry-4">Connecting another document</a></li>
+<li><a class="reference internal" href="#credits" id="toc-entry-5">Credits</a><ul>
+<li><a class="reference internal" href="#authors" id="toc-entry-6">Authors</a></li>
+<li><a class="reference internal" href="#contributors" id="toc-entry-7">Contributors</a></li>
+<li><a class="reference internal" href="#history" id="toc-entry-8">History</a></li>
+<li><a class="reference internal" href="#maintainer" id="toc-entry-9">Maintainer</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="features">
+<h2><a class="toc-backref" href="#toc-entry-1">Features</a></h2>
+<ul class="simple">
+<li><strong>A catalogue of texts with rules.</strong> Each text says where it is printed (the
+document type and the position), when (added automatically or on demand, a
+condition on the document, a validity period) and what (rich text with values
+of the document).</li>
+<li><strong>Four positions</strong>: top of document, before lines, after totals, bottom of
+document, with optional page breaks before or after a text.</li>
+<li><strong>Dynamic placeholders</strong>: type <tt class="docutils literal">/</tt> in the editor and choose <em>Dynamic
+Placeholder</em> to insert a value of the document. Dates, amounts and currencies
+are formatted in the customer's language. The former <tt class="docutils literal">[[partner_id.name]]</tt>
+syntax keeps working, with options such as <tt class="docutils literal"><span class="pre">[[date_order::full_date]]</span></tt>.</li>
+<li><strong>One list per document</strong>: catalogue texts, copies personalised for this
+document, and free texts, with a warning when a text will not be printed.</li>
+<li><strong>Preview</strong>: render a text on a sample document and see whether it would be
+printed.</li>
+<li><strong>Safe by design</strong>: a placeholder that does not match a field is refused when
+saving, and a text never makes a report fail.</li>
+<li><strong>Multilingual and multi-company</strong>: texts are translated like any Odoo content
+and can belong to one company or be shared.</li>
+</ul>
+</div>
+<div class="section" id="configuration">
+<h2><a class="toc-backref" href="#toc-entry-2">Configuration</a></h2>
+<img alt="The catalogue of text elements, grouped by document type" src="catalogue_list.png" />
+<p>Members of the <strong>Text Elements Manager</strong> group, granted to Settings
+administrators, maintain the catalogue in <em>Text Elements &gt; Configuration &gt; Text
+Elements</em>. Other internal users read it and adapt texts on their own documents.</p>
+<p>A text element answers three questions:</p>
+<ul class="simple">
+<li><strong>Where</strong>: the document type (empty for every document), the position, its
+order among the texts of the same position, and optional page breaks.</li>
+<li><strong>When</strong>: <em>Add automatically to new documents</em>, a <em>Condition</em> on the document
+(for example the customer's country or the amount), a validity period, and the
+company.</li>
+<li><strong>What</strong>: the content. In the editor, type <tt class="docutils literal">/</tt> and choose <em>Dynamic
+Placeholder</em> to insert a value of the document.</li>
+</ul>
+<img alt="A text element: where, when and what" src="catalogue_form.png" />
+<p>The <strong>Preview</strong> tab renders the text on a sample document and tells whether it
+would be printed.</p>
+<img alt="The preview of a text element on a sales order" src="catalogue_preview.png" />
+</div>
+<div class="section" id="usage">
+<h2><a class="toc-backref" href="#toc-entry-3">Usage</a></h2>
+<p>On a document, the <strong>Text Elements</strong> tab lists every text that will be printed,
+with its position and its source:</p>
+<img alt="The Text Elements tab of a sales order" src="document_tab.png" />
+<ul class="simple">
+<li><strong>Catalogue</strong>: follows the catalogue text; a correction in the catalogue is
+printed on the next print.</li>
+<li><strong>Personalised</strong>: a copy adapted for this document, written in the customer's
+language. The conditions of the catalogue text still apply. <em>Revert</em> returns
+to the catalogue text.</li>
+<li><strong>Free text</strong>: written for this document only, always printed.</li>
+</ul>
+<p>The tab offers two buttons:</p>
+<ul class="simple">
+<li><strong>Add from catalogue</strong> opens the catalogue texts that can still be added;
+select several and confirm.</li>
+<li><strong>Reapply default text elements</strong> adds the automatic texts the document lacks
+and removes the automatic ones that no longer apply. Texts added by hand or
+personalised are kept. The same happens when the customer or the company of
+the document changes.</li>
+</ul>
+<p>Automatic texts created after a document are not added to it until one of these
+happens, so that documents already sent do not change on reprint.</p>
+</div>
+<div class="section" id="connecting-another-document">
+<h2><a class="toc-backref" href="#toc-entry-4">Connecting another document</a></h2>
+<p>Any model with a PDF report can print text elements. In a small module:</p>
+<ol class="arabic simple">
+<li>inherit <tt class="docutils literal">text.element.abstract</tt> on the model;</li>
+<li>add the <tt class="docutils literal">text_element_custom_ids</tt> field to its form, with the
+<tt class="docutils literal">text_element_add_from_catalogue</tt> widget and the
+<tt class="docutils literal">action_reapply_default_text_elements</tt> button (see the Sale connector);</li>
+<li>in the report, set <tt class="docutils literal">text_element_record</tt> and <tt class="docutils literal">use_text_elements</tt>, and
+call <tt class="docutils literal">text_element_base.text_element_layout</tt> with the <tt class="docutils literal">before_line</tt> and
+<tt class="docutils literal">after_line</tt> positions. The top and bottom positions come with Odoo's
+standard document layouts.</li>
+</ol>
+</div>
+<div class="section" id="credits">
+<h2><a class="toc-backref" href="#toc-entry-5">Credits</a></h2>
+<div class="section" id="authors">
+<h3><a class="toc-backref" href="#toc-entry-6">Authors</a></h3>
+<ul class="simple">
+<li>Noviat</li>
+<li>Elneo</li>
+</ul>
+</div>
+<div class="section" id="contributors">
+<h3><a class="toc-backref" href="#toc-entry-7">Contributors</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://www.elneo.com/">Elneo</a>:<ul>
+<li>Loic Grifn&#233;e</li>
+</ul>
+</li>
+<li><a class="reference external" href="https://www.noviat.com/">Noviat</a>:<ul>
+<li>Benjamin Henquet</li>
+<li>J&#233;r&#233;my Didderen</li>
+</ul>
+</li>
+<li><a class="reference external" href="https://www.nsi-sa.be/">NSI SA</a></li>
+</ul>
+</div>
+<div class="section" id="history">
+<h3><a class="toc-backref" href="#toc-entry-8">History</a></h3>
+<p>The module was initially developed by Elneo in version 8.0 and later migrated
+to version 13.0. It was then taken over by Noviat, with Elneo's approval, to be
+refactored and made generic.</p>
+</div>
+<div class="section" id="maintainer">
+<h3><a class="toc-backref" href="#toc-entry-9">Maintainer</a></h3>
+<p>This module is maintained by <a class="reference external" href="https://www.noviat.com/">Noviat</a>, Odoo
+integrator in Belgium. Questions, or a connector for another document?
+Contact us: <a class="reference external" href="https://www.noviat.com/contact">https://www.noviat.com/contact</a></p>
+</div>
+</div>
+</div>
