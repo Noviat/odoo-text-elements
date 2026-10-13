@@ -12,7 +12,7 @@ This module adds the **Text Elements** tab to the form and prints the texts at t
 position chosen in the catalogue: top of document, before lines, after totals or
 bottom of document, in the customer's language.
 
-.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/19.0/text_element_accounting/static/description/invoice_report.png
+.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/20.0/text_element_accounting/static/description/invoice_report.png
    :alt: An invoice with a payment reminder and a closure notice
 
 Requirements
