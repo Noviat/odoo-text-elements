@@ -1,0 +1,18 @@
+# Copyright 2009 Noviat
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+
+{
+    "name": "Text Elements - Accounting",
+    "version": "20.0.1.0.0",
+    "license": "AGPL-3",
+    "author": "Noviat, Elneo",
+    "website": "https://www.noviat.com/",
+    "category": "Accounting",
+    "summary": "Text elements on invoices and credit notes",
+    "depends": ["text_element_base", "account"],
+    "data": [
+        "views/account_move_views.xml",
+        "views/invoice_report.xml",
+    ],
+    "images": ["static/description/banner.png"],
+}
