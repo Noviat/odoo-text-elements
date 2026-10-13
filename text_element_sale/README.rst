@@ -12,10 +12,10 @@ This module adds the **Text Elements** tab to the form and prints the texts at t
 position chosen in the catalogue: top of document, before lines, after totals or
 bottom of document, in the customer's language.
 
-.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/19.0/text_element_sale/static/description/sale_order_report.png
+.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/20.0/text_element_sale/static/description/sale_order_report.png
    :alt: A sales order with an introduction letter, a deposit clause and a closure notice
 
-.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/19.0/text_element_sale/static/description/document_tab.png
+.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/20.0/text_element_sale/static/description/document_tab.png
    :alt: The Text Elements tab of a sales order
 
 Requirements
