@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template
+        id="report_purchaseorder_document"
+        inherit_id="purchase.report_purchaseorder_document"
+    >
+        <!-- Set before the layout is called, so that the layout sees it. -->
+        <xpath expr="//t[@t-call='web.external_layout']" position="before">
+            <t
+                t-set="text_element_record"
+                t-value="o.with_context(lang=o.partner_id.lang)"
+            />
+            <t t-set="use_text_elements" t-value="True" />
+        </xpath>
+        <div id="informations" position="after">
+            <t
+                t-call="text_element_base.text_element_layout"
+                position.f="before_line"
+            />
+        </div>
+        <div id="total" position="after">
+            <div class="mt-3" />
+            <t t-call="text_element_base.text_element_layout" position.f="after_line" />
+        </div>
+    </template>
+
+    <template
+        id="report_purchasequotation_document"
+        inherit_id="purchase.report_purchasequotation_document"
+    >
+        <!-- Set before the layout is called, so that the layout sees it. -->
+        <xpath expr="//t[@t-call='web.external_layout']" position="before">
+            <t
+                t-set="text_element_record"
+                t-value="o.with_context(lang=o.partner_id.lang)"
+            />
+            <t t-set="use_text_elements" t-value="True" />
+        </xpath>
+        <xpath expr="//table" position="before">
+            <t
+                t-call="text_element_base.text_element_layout"
+                position.f="before_line"
+            />
+        </xpath>
+        <xpath expr="//table" position="after">
+            <div class="mt-3" />
+            <t t-call="text_element_base.text_element_layout" position.f="after_line" />
+        </xpath>
+    </template>
+</odoo>

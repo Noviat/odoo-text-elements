@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* text_element_purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: text_element_purchase
+#: model_terms:ir.ui.view,arch_db:text_element_purchase.purchase_order_form
+msgid ""
+"Add the automatic texts this document lacks and remove the automatic ones "
+"that no longer apply. Texts added by hand or personalised are kept."
+msgstr ""
+
+#. module: text_element_purchase
+#: model:ir.model.fields,field_description:text_element_purchase.field_purchase_order__text_element_ids
+msgid "Catalogue Text Elements"
+msgstr ""
+
+#. module: text_element_purchase
+#: model:ir.model.fields,field_description:text_element_purchase.field_purchase_order__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: text_element_purchase
+#: model:ir.model.fields,field_description:text_element_purchase.field_purchase_order__id
+msgid "ID"
+msgstr ""
+
+#. module: text_element_purchase
+#: model:ir.model,name:text_element_purchase.model_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: text_element_purchase
+#: model_terms:ir.ui.view,arch_db:text_element_purchase.purchase_order_form
+msgid "Reapply default text elements"
+msgstr ""
+
+#. module: text_element_purchase
+#: model:ir.model.fields,field_description:text_element_purchase.field_purchase_order__text_element_custom_ids
+#: model_terms:ir.ui.view,arch_db:text_element_purchase.purchase_order_form
+msgid "Text Elements"
+msgstr ""
