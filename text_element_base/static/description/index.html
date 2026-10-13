@@ -21,14 +21,17 @@ documents you need:</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><a class="reference internal" href="#features" id="toc-entry-1">Features</a></li>
-<li><a class="reference internal" href="#configuration" id="toc-entry-2">Configuration</a></li>
-<li><a class="reference internal" href="#usage" id="toc-entry-3">Usage</a></li>
-<li><a class="reference internal" href="#connecting-another-document" id="toc-entry-4">Connecting another document</a></li>
-<li><a class="reference internal" href="#credits" id="toc-entry-5">Credits</a><ul>
-<li><a class="reference internal" href="#authors" id="toc-entry-6">Authors</a></li>
-<li><a class="reference internal" href="#contributors" id="toc-entry-7">Contributors</a></li>
-<li><a class="reference internal" href="#history" id="toc-entry-8">History</a></li>
-<li><a class="reference internal" href="#maintainer" id="toc-entry-9">Maintainer</a></li>
+<li><a class="reference internal" href="#configuration" id="toc-entry-2">Configuration</a><ul>
+<li><a class="reference internal" href="#placeholders" id="toc-entry-3">Placeholders</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#usage" id="toc-entry-4">Usage</a></li>
+<li><a class="reference internal" href="#connecting-another-document" id="toc-entry-5">Connecting another document</a></li>
+<li><a class="reference internal" href="#credits" id="toc-entry-6">Credits</a><ul>
+<li><a class="reference internal" href="#authors" id="toc-entry-7">Authors</a></li>
+<li><a class="reference internal" href="#contributors" id="toc-entry-8">Contributors</a></li>
+<li><a class="reference internal" href="#history" id="toc-entry-9">History</a></li>
+<li><a class="reference internal" href="#maintainer" id="toc-entry-10">Maintainer</a></li>
 </ul>
 </li>
 </ul>
@@ -44,8 +47,9 @@ of the document).</li>
 document, with optional page breaks before or after a text.</li>
 <li><strong>Dynamic placeholders</strong>: type <tt class="docutils literal">/</tt> in the editor and choose <em>Dynamic
 Placeholder</em> to insert a value of the document. Dates, amounts and currencies
-are formatted in the customer's language. The former <tt class="docutils literal">[[partner_id.name]]</tt>
-syntax keeps working, with options such as <tt class="docutils literal"><span class="pre">[[date_order::full_date]]</span></tt>.</li>
+are formatted in the customer's language. The bracket syntax
+<tt class="docutils literal">[[partner_id.name]]</tt> reaches related records too, with options for dates
+and for printing several values as lines or as a bulleted list.</li>
 <li><strong>One list per document</strong>: catalogue texts, copies personalised for this
 document, and free texts, with a warning when a text will not be printed.</li>
 <li><strong>Preview</strong>: render a text on a sample document and see whether it would be
@@ -76,9 +80,78 @@ Placeholder</em> to insert a value of the document.</li>
 <p>The <strong>Preview</strong> tab renders the text on a sample document and tells whether it
 would be printed.</p>
 <img alt="The preview of a text element on a sales order" src="catalogue_preview.png" />
+<div class="section" id="placeholders">
+<h3><a class="toc-backref" href="#toc-entry-3">Placeholders</a></h3>
+<p>Besides the <em>Dynamic Placeholder</em> command, a value can be typed between double
+brackets: <tt class="docutils literal">[[field]]</tt>, or a path through related records such as
+<tt class="docutils literal">[[partner_id.country_id.name]]</tt>. Saving the text refuses a path that does not
+match a field of the document type.</p>
+<p>When a path crosses several records, for instance the invoices of a sales order,
+every value is printed, separated by commas. Add an option after <tt class="docutils literal">::</tt> to lay
+them out differently:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="51%" />
+<col width="49%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Placeholder</th>
+<th class="head">Prints</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><tt class="docutils literal">[[invoice_ids.name]]</tt></td>
+<td><tt class="docutils literal">INV/2026/0001, INV/2026/0002</tt></td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="pre">[[invoice_ids.name::lines]]</span></tt></td>
+<td>one value per line</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="pre">[[invoice_ids.name::list]]</span></tt></td>
+<td>a bulleted list, one item per value</td>
+</tr>
+</tbody>
+</table>
+<p>Put a <tt class="docutils literal">list</tt> placeholder on a line of its own: a list cannot sit inside a
+sentence.</p>
+<p>An origin declaration that names each ordered product on its own line, with
+<tt class="docutils literal"><span class="pre">[[order_line.product_id.name::lines]]</span></tt>, as written and as previewed:</p>
+<img alt="A placeholder with the lines option, in the editor and in the preview" src="placeholder_lines_preview.png" />
+<p>The same declaration on the printed order, followed by the invoices of the order
+listed with <tt class="docutils literal"><span class="pre">[[invoice_ids.name::list]]</span></tt>:</p>
+<img alt="A sales order printing its products one per line and its invoices as a list" src="placeholder_list_report.png" />
+<p>Dates and times accept a format option:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="51%" />
+<col width="49%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Placeholder</th>
+<th class="head">Prints</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><tt class="docutils literal"><span class="pre">[[validity_date::full]]</span></tt></td>
+<td>a date written in full: 21 August 2026</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="pre">[[date_order::full_date]]</span></tt></td>
+<td>the date of a date and time, in full</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="pre">[[date_order::date]]</span></tt></td>
+<td>the date only</td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="pre">[[date_order::time]]</span></tt></td>
+<td>the time only</td>
+</tr>
+</tbody>
+</table>
+<p>Both kinds of option combine:
+<tt class="docutils literal"><span class="pre">[[invoice_ids.invoice_date::full::lines]]</span></tt>. Values are formatted in the
+customer's language, and empty values are left out.</p>
+</div>
 </div>
 <div class="section" id="usage">
-<h2><a class="toc-backref" href="#toc-entry-3">Usage</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-4">Usage</a></h2>
 <p>On a document, the <strong>Text Elements</strong> tab lists every text that will be printed,
 with its position and its source:</p>
 <img alt="The Text Elements tab of a sales order" src="document_tab.png" />
@@ -103,7 +176,7 @@ the document changes.</li>
 happens, so that documents already sent do not change on reprint.</p>
 </div>
 <div class="section" id="connecting-another-document">
-<h2><a class="toc-backref" href="#toc-entry-4">Connecting another document</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-5">Connecting another document</a></h2>
 <p>Any model with a PDF report can print text elements. In a small module:</p>
 <ol class="arabic simple">
 <li>inherit <tt class="docutils literal">text.element.abstract</tt> on the model;</li>
@@ -117,16 +190,16 @@ standard document layouts.</li>
 </ol>
 </div>
 <div class="section" id="credits">
-<h2><a class="toc-backref" href="#toc-entry-5">Credits</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-6">Credits</a></h2>
 <div class="section" id="authors">
-<h3><a class="toc-backref" href="#toc-entry-6">Authors</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-7">Authors</a></h3>
 <ul class="simple">
 <li>Noviat</li>
 <li>Elneo</li>
 </ul>
 </div>
 <div class="section" id="contributors">
-<h3><a class="toc-backref" href="#toc-entry-7">Contributors</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-8">Contributors</a></h3>
 <ul class="simple">
 <li><a class="reference external" href="https://www.elneo.com/">Elneo</a>:<ul>
 <li>Loic Grifn&#233;e</li>
@@ -141,13 +214,13 @@ standard document layouts.</li>
 </ul>
 </div>
 <div class="section" id="history">
-<h3><a class="toc-backref" href="#toc-entry-8">History</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-9">History</a></h3>
 <p>The module was initially developed by Elneo in version 8.0 and later migrated
 to version 13.0. It was then taken over by Noviat, with Elneo's approval, to be
 refactored and made generic.</p>
 </div>
 <div class="section" id="maintainer">
-<h3><a class="toc-backref" href="#toc-entry-9">Maintainer</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-10">Maintainer</a></h3>
 <p>This module is maintained by <a class="reference external" href="https://www.noviat.com/">Noviat</a>, Odoo
 integrator in Belgium. Questions, or a connector for another document?
 Contact us: <a class="reference external" href="https://www.noviat.com/contact">https://www.noviat.com/contact</a></p>
