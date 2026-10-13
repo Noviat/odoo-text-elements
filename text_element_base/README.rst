@@ -38,8 +38,9 @@ Features
   document, with optional page breaks before or after a text.
 * **Dynamic placeholders**: type ``/`` in the editor and choose *Dynamic
   Placeholder* to insert a value of the document. Dates, amounts and currencies
-  are formatted in the customer's language. The former ``[[partner_id.name]]``
-  syntax keeps working, with options such as ``[[date_order::full_date]]``.
+  are formatted in the customer's language. The bracket syntax
+  ``[[partner_id.name]]`` reaches related records too, with options for dates
+  and for printing several values as lines or as a bulleted list.
 * **One list per document**: catalogue texts, copies personalised for this
   document, and free texts, with a warning when a text will not be printed.
 * **Preview**: render a text on a sample document and see whether it would be
@@ -77,6 +78,56 @@ would be printed.
 
 .. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/19.0/text_element_base/static/description/catalogue_preview.png
    :alt: The preview of a text element on a sales order
+
+Placeholders
+------------
+
+Besides the *Dynamic Placeholder* command, a value can be typed between double
+brackets: ``[[field]]``, or a path through related records such as
+``[[partner_id.country_id.name]]``. Saving the text refuses a path that does not
+match a field of the document type.
+
+When a path crosses several records, for instance the invoices of a sales order,
+every value is printed, separated by commas. Add an option after ``::`` to lay
+them out differently:
+
+========================================  ======================================
+Placeholder                               Prints
+========================================  ======================================
+``[[invoice_ids.name]]``                  ``INV/2026/0001, INV/2026/0002``
+``[[invoice_ids.name::lines]]``           one value per line
+``[[invoice_ids.name::list]]``            a bulleted list, one item per value
+========================================  ======================================
+
+Put a ``list`` placeholder on a line of its own: a list cannot sit inside a
+sentence.
+
+An origin declaration that names each ordered product on its own line, with
+``[[order_line.product_id.name::lines]]``, as written and as previewed:
+
+.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/19.0/text_element_base/static/description/placeholder_lines_preview.png
+   :alt: A placeholder with the lines option, in the editor and in the preview
+
+The same declaration on the printed order, followed by the invoices of the order
+listed with ``[[invoice_ids.name::list]]``:
+
+.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/19.0/text_element_base/static/description/placeholder_list_report.png
+   :alt: A sales order printing its products one per line and its invoices as a list
+
+Dates and times accept a format option:
+
+========================================  ======================================
+Placeholder                               Prints
+========================================  ======================================
+``[[validity_date::full]]``               a date written in full: 21 August 2026
+``[[date_order::full_date]]``             the date of a date and time, in full
+``[[date_order::date]]``                  the date only
+``[[date_order::time]]``                  the time only
+========================================  ======================================
+
+Both kinds of option combine:
+``[[invoice_ids.invoice_date::full::lines]]``. Values are formatted in the
+customer's language, and empty values are left out.
 
 Usage
 =====

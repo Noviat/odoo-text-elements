@@ -4,6 +4,8 @@
 from datetime import date
 from unittest.mock import patch
 
+from markupsafe import escape
+
 from odoo.exceptions import ValidationError
 from odoo.tests import TransactionCase, tagged
 
@@ -62,6 +64,76 @@ class TestPlaceholder(TransactionCase):
 
     def test_many2one_renders_display_name(self):
         self.assertEqual(self._render("[[country_id]]"), self.country.display_name)
+
+    def _create_children(self):
+        return self.env["res.partner"].create(
+            [
+                {
+                    "name": "Child A",
+                    "parent_id": self.partner.id,
+                    "email": "a@example.com",
+                },
+                {"name": "Child B <x>", "parent_id": self.partner.id},
+            ]
+        )
+
+    def test_x2many_path_joins_values(self):
+        self._create_children()
+        self.assertEqual(
+            self._render("[[child_ids.name]]"), "Child A, Child B &lt;x&gt;"
+        )
+
+    def test_x2many_layout_lines(self):
+        self._create_children()
+        self.assertEqual(
+            self._render("[[child_ids.name::lines]]"), "Child A<br/>Child B &lt;x&gt;"
+        )
+
+    def test_x2many_layout_list(self):
+        self._create_children()
+        self.assertEqual(
+            self._render("[[child_ids.name::list]]"),
+            "<ul><li>Child A</li><li>Child B &lt;x&gt;</li></ul>",
+        )
+
+    def test_x2many_field_split_per_record(self):
+        child_a, child_b = self._create_children()
+        self.assertEqual(
+            self._render("[[child_ids::lines]]"),
+            f"{escape(child_a.display_name)}<br/>{escape(child_b.display_name)}",
+        )
+
+    def test_layout_skips_empty_values(self):
+        self._create_children()
+        self.assertEqual(
+            self._render("[[child_ids.email::list]]"), "<ul><li>a@example.com</li></ul>"
+        )
+
+    def test_layout_combines_with_format_option(self):
+        child_a, child_b = self._create_children()
+        expected = [
+            str(
+                self.TextElement._get_formated_value(
+                    child.create_date, "en_US", "datetime", "date"
+                )
+            )
+            for child in (child_a, child_b)
+        ]
+        rendered = self.TextElement.with_context(lang="en_US")._render_placeholders(
+            self.partner, "[[child_ids.create_date::date::lines]]"
+        )
+        self.assertEqual(str(rendered), "<br/>".join(expected))
+
+    def test_layout_on_empty_x2many_renders_nothing(self):
+        self.assertEqual(self._render("a[[child_ids.name::list]]b"), "ab")
+
+    def test_layout_option_passes_save_check(self):
+        self.assertEqual(
+            self.TextElement._find_invalid_placeholders(
+                "res.partner", "[[child_ids.name::list]] [[bank_ids.acc_number::lines]]"
+            ),
+            [],
+        )
 
     def test_char_value_is_escaped(self):
         self.assertIn("&lt;script&gt;", self._render("[[name]]"))
