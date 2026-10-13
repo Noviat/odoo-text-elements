@@ -3,7 +3,7 @@
 
 {
     "name": "Text Elements",
-    "version": "20.0.1.0.0",
+    "version": "20.0.1.1.0",
     "license": "AGPL-3",
     "author": "Noviat, Elneo",
     "website": "https://www.noviat.com/",

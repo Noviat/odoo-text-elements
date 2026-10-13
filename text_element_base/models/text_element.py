@@ -29,6 +29,8 @@ TOUT_RE = re.compile(
     re.DOTALL,
 )
 PATH_RE = re.compile(r"^[a-z_][a-z0-9_]*(\.[a-z_][a-z0-9_]*)*$")
+# [[invoice_ids.name::lines]]: how the values of several records are laid out
+LAYOUTS = ("lines", "list")
 
 
 class TextElement(models.Model):
@@ -269,15 +271,31 @@ class TextElement(models.Model):
 
         Walks the fields one by one instead of evaluating an expression, and
         never raises: a placeholder must not make a report fail.
+
+        A path through a one2many or a many2many yields several values,
+        joined with commas, or laid out by the ``lines`` and ``list``
+        options. Those combine with a format option: ``full::lines``.
         """
+        options = [opt.strip() for opt in option.split("::")] if option else []
+        layout = next((opt for opt in options if opt in LAYOUTS), "")
+        option = next((opt for opt in options if opt not in LAYOUTS), "")
         try:
             field, owners = self._walk_path(record, path)
             if field is None:
                 return ""
-            values = [
-                self._format_value(field, owner[field.name], option, owner)
-                for owner in owners
-            ]
+            if field.relational:
+                # One value per related record, not one per owner: an
+                # x2many at the end of the path is split like the others.
+                values = [
+                    escape(name)
+                    for name in owners[field.name].mapped("display_name")
+                    if name
+                ]
+            else:
+                values = [
+                    self._format_value(field, owner[field.name], option, owner)
+                    for owner in owners
+                ]
         except (KeyError, ValueError, AccessError, MissingError) as error:
             _logger.warning(
                 "Text element placeholder %r cannot be rendered on %s: %s",
@@ -286,7 +304,18 @@ class TextElement(models.Model):
                 error,
             )
             return ""
-        return Markup(", ").join(value for value in values if value)
+        return self._join_values([value for value in values if value], layout)
+
+    @api.model
+    def _join_values(self, values, layout=""):
+        if not values:
+            return ""
+        if layout == "lines":
+            return Markup("<br/>").join(values)
+        if layout == "list":
+            items = Markup("").join(Markup("<li>%s</li>") % value for value in values)
+            return Markup("<ul>%s</ul>") % items
+        return Markup(", ").join(values)
 
     @api.model
     def _walk_path(self, record, path):
