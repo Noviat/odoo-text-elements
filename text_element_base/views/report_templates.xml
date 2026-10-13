@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="text_element_layout">
+        <t
+            t-set="colclass"
+            t-value="('col-sm-5' if report_type == 'html' else 'col-5') + ' ml-auto'"
+        />
+        <t t-if="use_text_elements">
+            <t
+                t-set="text_elements"
+                t-value="text_element_record._get_text_elements(position)"
+            />
+            <t t-if="text_elements">
+                <t t-foreach="text_elements" t-as="text_element">
+                    <div
+                        t-out="text_element._get_content_interpreted(text_element_record)"
+                        t-att-style="'page-break-before:always;' if text_element.page_break_before else ''"
+                    />
+                    <t t-if="text_element.page_break_after">
+                        <p style="page-break-before:always;" />
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <!-- Every document layout renders its body through this template. -->
+    <template id="external_layout_body" inherit_id="web.external_layout_body">
+        <xpath expr="//t[@t-if='customized_address_layout']" position="before">
+            <t t-call="text_element_base.text_element_layout" position.f="before" />
+        </xpath>
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="text_element_base.text_element_layout" position.f="after" />
+        </xpath>
+    </template>
+</odoo>

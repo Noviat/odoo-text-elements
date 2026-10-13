@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="text_element_form_view" model="ir.ui.view">
+        <field name="name">text.element.form</field>
+        <field name="model">text.element</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="text-bg-danger"
+                        invisible="active"
+                    />
+                    <field name="active" invisible="1" />
+                    <field name="model" invisible="1" />
+                    <div class="oe_title">
+                        <label for="name" />
+                        <h1>
+                            <field
+                                name="name"
+                                placeholder="e.g. Annual closure notice"
+                            />
+                        </h1>
+                    </div>
+                    <group>
+                        <group name="where" string="Where">
+                            <field
+                                name="model_id"
+                                placeholder="All documents"
+                                options="{'no_create': True, 'no_open': True}"
+                            />
+                            <field name="position" />
+                            <field name="sequence" />
+                            <label for="page_break_before" string="Page break" />
+                            <div class="o_row">
+                                <field name="page_break_before" nolabel="1" />
+                                <span>before</span>
+                                <field name="page_break_after" nolabel="1" />
+                                <span>after</span>
+                            </div>
+                        </group>
+                        <group name="when" string="When">
+                            <field name="default" />
+                            <field
+                                name="filter_domain"
+                                widget="domain"
+                                options="{'model': 'model', 'in_dialog': True}"
+                                invisible="not model_id"
+                            />
+                            <label for="date_from" string="Valid" />
+                            <div class="o_row">
+                                <field
+                                    name="date_from"
+                                    widget="daterange"
+                                    options="{'end_date_field': 'date_to'}"
+                                    placeholder="always"
+                                />
+                                <field name="date_to" invisible="1" />
+                            </div>
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                                placeholder="All companies"
+                            />
+                            <field name="context_params" groups="base.group_no_one" />
+                            <field
+                                name="user_id"
+                                groups="base.group_no_one"
+                                widget="many2one_avatar_user"
+                            />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="content_page" string="Content">
+                            <div class="text-muted small mb-2" invisible="not model_id">
+                                Type <kbd>/</kbd> and choose <em
+                            >Dynamic Placeholder</em> to insert a value of the
+                                document, such as the customer name.
+                            </div>
+                            <field
+                                name="content"
+                                nolabel="1"
+                                widget="html"
+                                options="{'style-inline': true, 'codeview': true, 'dynamic_placeholder': true, 'dynamic_placeholder_model_reference_field': 'model'}"
+                            />
+                        </page>
+                        <page
+                            name="preview_page"
+                            string="Preview"
+                            invisible="not model_id"
+                        >
+                            <group>
+                                <field
+                                    name="preview_record"
+                                    options="{'hide_model': True, 'model_field': 'model_id', 'no_create': True}"
+                                />
+                                <field
+                                    name="preview_status"
+                                    widget="badge"
+                                    decoration-success="preview_status == 'printed'"
+                                    decoration-warning="preview_status != 'printed'"
+                                    invisible="not preview_status"
+                                />
+                            </group>
+                            <field
+                                name="preview_html"
+                                nolabel="1"
+                                readonly="1"
+                                invisible="not preview_record"
+                            />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="text_element_list_view" model="ir.ui.view">
+        <field name="name">text.element.list</field>
+        <field name="model">text.element</field>
+        <field name="arch" type="xml">
+            <list multi_edit="1">
+                <field name="model" column_invisible="True" />
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="model_id" optional="show" readonly="1" />
+                <field name="position" />
+                <field name="default" optional="show" />
+                <field name="has_condition" string="Condition" optional="show" />
+                <field name="date_from" optional="show" />
+                <field name="date_to" optional="show" />
+                <field name="page_break_before" optional="hide" />
+                <field name="page_break_after" optional="hide" />
+                <field
+                    name="company_id"
+                    groups="base.group_multi_company"
+                    optional="hide"
+                />
+            </list>
+        </field>
+    </record>
+
+    <record id="text_element_search_view" model="ir.ui.view">
+        <field name="name">text.element.search</field>
+        <field name="model">text.element</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="content" />
+                <field name="model_id" />
+                <separator />
+                <filter
+                    name="default"
+                    string="Automatic"
+                    domain="[('default', '=', True)]"
+                />
+                <filter
+                    name="with_condition"
+                    string="With a condition"
+                    domain="[('filter_domain', 'not in', (False, '', '[]'))]"
+                />
+                <separator />
+                <filter
+                    name="current"
+                    string="Valid today"
+                    domain="['&amp;',
+                        '|', ('date_from', '=', False), ('date_from', '&lt;=', context_today().strftime('%Y-%m-%d')),
+                        '|', ('date_to', '=', False), ('date_to', '&gt;=', context_today().strftime('%Y-%m-%d'))]"
+                />
+                <filter
+                    name="expired"
+                    string="Expired"
+                    domain="[('date_to', '&lt;', context_today().strftime('%Y-%m-%d'))]"
+                />
+                <separator />
+                <filter
+                    name="before"
+                    string="Top of document"
+                    domain="[('position', '=', 'before')]"
+                />
+                <filter
+                    name="before_line"
+                    string="Before lines"
+                    domain="[('position', '=', 'before_line')]"
+                />
+                <filter
+                    name="after_line"
+                    string="After totals"
+                    domain="[('position', '=', 'after_line')]"
+                />
+                <filter
+                    name="after"
+                    string="Bottom of document"
+                    domain="[('position', '=', 'after')]"
+                />
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+                <group>
+                    <filter
+                        name="group_model"
+                        string="Document type"
+                        context="{'group_by': 'model_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Kept for the views of client modules written for the former UI. -->
+    <record id="text_element_simplified_form_view" model="ir.ui.view">
+        <field name="name">text.element.simplified.form</field>
+        <field name="model">text.element</field>
+        <field name="inherit_id" ref="text_element_base.text_element_form_view" />
+        <field name="mode">primary</field>
+        <field name="priority" eval="999" />
+        <field name="arch" type="xml">
+            <field name="model_id" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="text_element_simplified_list_view" model="ir.ui.view">
+        <field name="name">text.element.simplified.list</field>
+        <field name="model">text.element</field>
+        <field name="inherit_id" ref="text_element_base.text_element_list_view" />
+        <field name="mode">primary</field>
+        <field name="priority" eval="999" />
+        <field name="arch" type="xml">
+            <field name="model_id" position="attributes">
+                <attribute name="column_invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="text_element_action" model="ir.actions.act_window">
+        <field name="name">Text Elements</field>
+        <field name="res_model">text.element</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_group_model': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Write a first text element</p>
+            <p>
+                A text element is a paragraph printed on documents: a legal notice,
+                an annual closure, a clause. Choose where it goes, when it applies,
+                and whether it is added automatically.
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="text_element_menu"
+        action="text_element_action"
+        name="Text Elements"
+        parent="text_element_base.text_element_menu_category"
+        sequence="10"
+    />
+</odoo>
