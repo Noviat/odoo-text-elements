@@ -3,8 +3,8 @@
     <t t-name="text_element_base.AddTextElementFromCatalogue">
         <button
             t-if="!props.readonly"
-            type="button"
             class="btn btn-primary"
+            type="button"
             t-on-click="onClick"
         >
             <i class="fa fa-plus me-1" />Add from catalogue

@@ -1,0 +1,6 @@
+id,name,model_id,group_id/id,operation,domain
+access_text_element_user,access_text_element_user,text.element,base.group_user,r,
+access_text_element_manager,access_text_element_manager,text.element,text_element_base.group_text_element_manager,crud,
+access_text_element_custom,access_text_element_custom,text.element.custom,base.group_user,crud,
+text_element_rule_company,Text Element - Multi-Company,text.element,,crud,"['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]"
+text_element_custom_rule_company,Custom Text Element - Multi-Company,text.element.custom,,crud,"['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]"

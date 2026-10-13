@@ -217,7 +217,7 @@
         <field name="model">text.element</field>
         <field name="inherit_id" ref="text_element_base.text_element_form_view" />
         <field name="mode">primary</field>
-        <field name="priority">999</field>
+        <field name="priority" eval="999" />
         <field name="arch" type="xml">
             <field name="model_id" position="attributes">
                 <attribute name="readonly">1</attribute>
@@ -230,7 +230,7 @@
         <field name="model">text.element</field>
         <field name="inherit_id" ref="text_element_base.text_element_list_view" />
         <field name="mode">primary</field>
-        <field name="priority">999</field>
+        <field name="priority" eval="999" />
         <field name="arch" type="xml">
             <field name="model_id" position="attributes">
                 <attribute name="column_invisible">1</attribute>

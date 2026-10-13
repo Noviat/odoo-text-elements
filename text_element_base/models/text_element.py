@@ -60,7 +60,6 @@ class TextElement(models.Model):
     )
     user_id = fields.Many2one(
         comodel_name="res.users",
-        string="User",
         help="Only added automatically on the documents of this user.",
     )
     active = fields.Boolean(default=True)

@@ -19,7 +19,7 @@ documents you need:
 * **Text Elements - Purchase**: requests for quotation and purchase orders
 * **Text Elements - Stock**: delivery slips
 
-.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/19.0/text_element_base/static/description/sale_order_report.png
+.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/20.0/text_element_base/static/description/sale_order_report.png
    :alt: A sales order with texts before the lines, after the totals and at the bottom
 
 **Table of contents**
@@ -52,7 +52,7 @@ Features
 Configuration
 =============
 
-.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/19.0/text_element_base/static/description/catalogue_list.png
+.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/20.0/text_element_base/static/description/catalogue_list.png
    :alt: The catalogue of text elements, grouped by document type
 
 Members of the **Text Elements Manager** group, granted to Settings
@@ -69,13 +69,13 @@ A text element answers three questions:
 * **What**: the content. In the editor, type ``/`` and choose *Dynamic
   Placeholder* to insert a value of the document.
 
-.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/19.0/text_element_base/static/description/catalogue_form.png
+.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/20.0/text_element_base/static/description/catalogue_form.png
    :alt: A text element: where, when and what
 
 The **Preview** tab renders the text on a sample document and tells whether it
 would be printed.
 
-.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/19.0/text_element_base/static/description/catalogue_preview.png
+.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/20.0/text_element_base/static/description/catalogue_preview.png
    :alt: The preview of a text element on a sales order
 
 Usage
@@ -84,7 +84,7 @@ Usage
 On a document, the **Text Elements** tab lists every text that will be printed,
 with its position and its source:
 
-.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/19.0/text_element_base/static/description/document_tab.png
+.. image:: https://raw.githubusercontent.com/Noviat/odoo-text-elements/20.0/text_element_base/static/description/document_tab.png
    :alt: The Text Elements tab of a sales order
 
 * **Catalogue**: follows the catalogue text; a correction in the catalogue is

@@ -3,7 +3,7 @@
 
 {
     "name": "Text Elements",
-    "version": "19.0.2.0.1",
+    "version": "20.0.1.0.0",
     "license": "AGPL-3",
     "author": "Noviat, Elneo",
     "website": "https://www.noviat.com/",
@@ -12,7 +12,7 @@
     "depends": ["base", "web", "mail", "html_editor"],
     "data": [
         "security/text_element_security.xml",
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "views/menus.xml",
         "views/ir_model_views.xml",
         "views/report_templates.xml",
