@@ -4,7 +4,7 @@
     <record id="text_element_custom_document_list_view" model="ir.ui.view">
         <field name="name">text.element.custom.document.list</field>
         <field name="model">text.element.custom</field>
-        <field name="priority">999</field>
+        <field name="priority" eval="999" />
         <field name="arch" type="xml">
             <list>
                 <control>
@@ -53,7 +53,7 @@
     <record id="text_element_custom_document_form_view" model="ir.ui.view">
         <field name="name">text.element.custom.document.form</field>
         <field name="model">text.element.custom</field>
-        <field name="priority">999</field>
+        <field name="priority" eval="999" />
         <field name="arch" type="xml">
             <form>
                 <field name="kind" invisible="1" />
@@ -122,7 +122,7 @@
             ref="text_element_base.text_element_custom_document_list_view"
         />
         <field name="mode">primary</field>
-        <field name="priority">999</field>
+        <field name="priority" eval="999" />
         <field name="arch" type="xml">
             <field name="display_name" position="attributes">
                 <attribute name="string">Text</attribute>
@@ -138,7 +138,7 @@
             ref="text_element_base.text_element_custom_document_form_view"
         />
         <field name="mode">primary</field>
-        <field name="priority">999</field>
+        <field name="priority" eval="999" />
         <field name="arch" type="xml">
             <field name="name" position="attributes">
                 <attribute name="placeholder">Name</attribute>

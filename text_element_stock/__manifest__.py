@@ -15,5 +15,4 @@
         "views/stock_picking_report.xml",
     ],
     "images": ["static/description/banner.png"],
-    "installable": True,
 }

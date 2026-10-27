@@ -15,5 +15,4 @@
         "views/purchase_order_report.xml",
     ],
     "images": ["static/description/banner.png"],
-    "installable": True,
 }
