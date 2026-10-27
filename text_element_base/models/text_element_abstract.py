@@ -143,9 +143,11 @@ class TextElementAbstract(models.AbstractModel):
             wanted = TextElement.search(record._get_computed_elements_domain())
             present = record.text_element_custom_ids.text_element_id
             stale = record.text_element_custom_ids.filtered(
-                lambda line, wanted=wanted: line.origin == "auto"
-                and not line.is_personalized
-                and line.text_element_id not in wanted
+                lambda line, wanted=wanted: (
+                    line.origin == "auto"
+                    and not line.is_personalized
+                    and line.text_element_id not in wanted
+                )
             )
             removed += len(stale)
             stale.unlink()

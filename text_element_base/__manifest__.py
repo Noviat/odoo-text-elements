@@ -25,5 +25,4 @@
         ],
     },
     "images": ["static/description/banner.png"],
-    "installable": True,
 }

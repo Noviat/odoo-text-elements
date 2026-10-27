@@ -1,7 +1,8 @@
 # Do NOT update manually; changes here will be overwritten by Copier
-_commit: v6.1.2
+_commit: v9.1.0
 _src_path: git@github.com:Noviat-CI/addons-repo-template.git
 ci_disable_autoinstall_modules: account_asset
+community_excluded_modules: ''
 odoo_test_flavor: Both
 odoo_version: 18.0
 org_slug: Noviat
@@ -9,4 +10,5 @@ rebel_module_groups: []
 repo_name: Odoo Text Elements
 repo_slug: odoo-text-elements
 repo_type: customer
+weblate_project_name: ''
 

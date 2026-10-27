@@ -62,7 +62,6 @@ class TextElement(models.Model):
     )
     user_id = fields.Many2one(
         comodel_name="res.users",
-        string="User",
         help="Only added automatically on the documents of this user.",
     )
     active = fields.Boolean(default=True)
@@ -267,7 +266,8 @@ class TextElement(models.Model):
             return self._resolve_placeholder(record, path.strip(), option.strip())
 
         content = self._render_tout(record, content)
-        return Markup(BRACKET_RE.sub(replace_bracket, content))
+        # Sanitized html field content; _resolve_placeholder escapes the values
+        return Markup(BRACKET_RE.sub(replace_bracket, content))  # noqa: S704
 
     @api.model
     def _resolve_placeholder(self, record, path, option=""):
@@ -400,7 +400,7 @@ class TextElement(models.Model):
             selection = dict(field._description_selection(self.env))
             return escape(selection.get(value, value))
         if field.type == "html":
-            return Markup(value)
+            return Markup(value)  # noqa: S704 - html fields are sanitized
         return escape(str(value))
 
     @api.model

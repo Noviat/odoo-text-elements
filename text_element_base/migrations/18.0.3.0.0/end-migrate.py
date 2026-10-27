@@ -75,7 +75,8 @@ def _create_lines(env, values):
             Line.create(values)
             env.flush_all()
         return 0
-    except Exception:  # pylint: disable=broad-except
+    # A refused line must not abort the upgrade: retried one by one below
+    except Exception:  # noqa: BLE001
         env.invalidate_all()
     skipped = 0
     for vals in values:
@@ -83,7 +84,8 @@ def _create_lines(env, values):
             with env.cr.savepoint():
                 Line.create(vals)
                 env.flush_all()
-        except Exception as error:  # pylint: disable=broad-except
+        # A refused line is logged and skipped
+        except Exception as error:  # noqa: BLE001, PERF203
             env.invalidate_all()
             skipped += 1
             _logger.warning("text_element: line %s not migrated: %s", vals, error)
